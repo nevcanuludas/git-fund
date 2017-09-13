@@ -50,9 +50,10 @@
 	<section class="slide">
 		<h2>Configuration</h2>
 		<pre>
-			<code>$ git config --global user.name <mark>"Nevcan Uludaş"</mark></code>
-			<code>$ git config --global user.email <mark>"nevcan@uludas.com"</mark></code>
+			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
+			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
 			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
+			<p>HOW TO CONFIG STATUS DEFAULTs ??</p>
 		</pre>
 	</section>
 
@@ -61,27 +62,110 @@
 	</section>
 
 	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-work-system.png" alt="Git Work System">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
 		<h2>Start</h2>
 		<pre>
-			<code>$ git init <mark>&lt; directory &gt;</mark></code>
-			<code>$ git clone <mark>&lt; remote &gt;</mark></code>
+			<code>$ git init <mark class="comment">&lt; directory &gt;</mark></code>
+			<span class="comment">Look up hidden files <mark class="important">!</mark> Which one?</span>
+			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
 		</pre>
 	</section>
 
 	<section class="slide">
 		<h2>Status</h2>
 		<pre>
-			<code>$ git status <mark>--long</mark></code> <span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark>.</span>
-			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code> <span class="comment">Give the output in the short-format.</span>
-			<code>$ git status <mark>--porcelain</mark></code> <span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration.</span>
+			<code>$ git status <mark>--long</mark></code>
+			<span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark></span>
+			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code>
+			<span class="comment">Give the output in the short-format</span>
+			<code>$ git status <mark>--porcelain</mark></code>
+			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<figure>
-			<img class="cover" src="images/git-work-area.png" alt="">
-			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
-		</figure>
+		<h2>Adding Things</h2>
+		<pre>
+			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
+			<span class="comment">Add changes from all tracked and untracked files</span>
+			<code>$ git add <mark>.</mark></code>
+			<span class="comment">Stages new and modified, <b>without deleted</b></span>
+			<code>$ git add <mark>-u</mark> <span class="comment">or --update</span></code>
+			<span class="comment">Stages modified and deleted, <b>without new</b></span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Adding Things</h2>
+		<pre>
+			<code>$ git add <mark>*</mark></code>
+			<span class="comment">Add all unstaged files</span>
+			<code>$ git add <mark>**/*.js</mark></code>
+			<span class="comment">Add all unstaged <b>JS</b> files</span>
+			<code>$ git add <mark>*.js</mark></code>
+			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Removing Things</h2>
+		<pre>
+				<code>$ git reset HEAD <mark class="comment">&lt; file_name &gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Committing</h2>
+		<pre>
+				<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
+				<code>$ git commit <mark>--amend</mark> ??</code>
+				<code>$ git MERGE COMMİTS ??</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit Subject</h2>
+		<p>How it should be?</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout grow">Golden Rule of Version Control</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout grow">Only Commit <span style="color: gold">RELATED</span> Changes!</h2>
+	</section>
+
+	<section class="slide">
+			<figure>
+				<img class="cover" src="images/git-basic-commands.png" alt="Git Basic Commands">
+				<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+			</figure>
+		</section>
+
+	<section class="slide">
+		<h2>Commit History (log)</h2>
+		<pre>
+				<code>$ git log</code> <span class="comment"></span>
+				<code>$ git log <mark>-2</mark></code>
+				<code>$ git log <mark>--pretty=oneline</mark><span class="comment"> | short | full</span></code>
+				<code>$ git log <mark>--pretty=format:"%cn"</mark><span class="comment"> | %s | %h</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit History (log)</h2>
+		<pre>
+				<code>$ git log <mark>--reflog</mark></code>
+				<span class="comment">Shows all history</span>
+		</pre>
 	</section>
 
 	<footer class="badge">
