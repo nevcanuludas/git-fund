@@ -26,6 +26,64 @@
 		</figure>
 	</section>
 
+	<section class="slide">
+		<h2>Installation</h2>
+		<ol>
+			<li>
+				<b>on Mac OS</b><br>
+				<a href="http://code.google.com/p/git-osx-installer" target="_blank">http://code.google.com/p/git-osx-installer</a>
+			</li>
+			<li>
+				<b>on Windows</b><br>
+				<a href="https://git-for-windows.github.io/" target="_blank">https://git-for-windows.github.io/</a>
+			</li>
+			<li>
+				<b>on Linux</b><br>
+				<pre>
+					<code class="mark">$ yum install git</code>
+					<code class="mark">$ apt-get install git</code>
+				</pre>
+			</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Configuration</h2>
+		<pre>
+			<code>$ git config --global user.name <mark>"Nevcan Uludaş"</mark></code>
+			<code>$ git config --global user.email <mark>"nevcan@uludas.com"</mark></code>
+			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout grow">Very Fast Start</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Start</h2>
+		<pre>
+			<code>$ git init <mark>&lt; directory &gt;</mark></code>
+			<code>$ git clone <mark>&lt; remote &gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Status</h2>
+		<pre>
+			<code>$ git status <mark>--long</mark></code> <span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark>.</span>
+			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code> <span class="comment">Give the output in the short-format.</span>
+			<code>$ git status <mark>--porcelain</mark></code> <span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration.</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-work-area.png" alt="">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
+	</section>
+
 	<footer class="badge">
 		<a href="https://github.com/nevcanuludas/git-presentation">Fork me on GitHub</a>
 	</footer>
