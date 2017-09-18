@@ -27,24 +27,24 @@
 	</section>
 
 	<section class="slide">
-		<h2>Installation</h2>
-		<ol>
+		<h2>Index</h2>
+		<ol class="double">
+			<li><a href="index.html#3">Configuration</a></li>
 			<li>
-				<b>on Mac OS</b><br>
-				<a href="http://code.google.com/p/git-osx-installer" target="_blank">http://code.google.com/p/git-osx-installer</a>
+				Quick Start
+				<ul>
+					<li>Installation</li>
+					<li>Status</li>
+					<li>Add / Remove</li>
+					<li>Commit</li>
+					<li>Commit History (Log)</li>
+				</ul>
 			</li>
-			<li>
-				<b>on Windows</b><br>
-				<a href="https://git-for-windows.github.io/" target="_blank">https://git-for-windows.github.io/</a>
-			</li>
-			<li>
-				<b>on Linux</b><br>
-				<pre>
-					<code class="mark">$ yum install git</code>
-					<code class="mark">$ apt-get install git</code>
-				</pre>
-			</li>
+			<li>Branches</li>
+			<li>HEAD</li>
+			<li>SHA</li>
 		</ol>
+		<footer class="footer">Test</footer>
 	</section>
 
 	<section class="slide">
@@ -53,7 +53,10 @@
 			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
 			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
 			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
-			<p>HOW TO CONFIG STATUS DEFAULTs ??</p>
+			<code>$ git config <mark>alias.<span class="comment">st "status"</span></mark></code>
+			<span class="comment">.git/config</span>
+			<code>$ git config --global <mark>alias.<span class="comment">st "status"</span></mark></code>
+			<span class="comment">~/.gitconfig</span>
 		</pre>
 	</section>
 
@@ -155,11 +158,11 @@
 		<pre>
 				<code>$ git log</code> <span class="comment"></span>
 				<code>$ git log <mark>-2</mark></code>
+				<code>$ git log <mark class="comment">&lt; file_name &gt;</mark></code>
+				<code>$ git log <mark class="comment">&lt; branch_name &gt;</mark></code>
 				<code>$ git log <mark>--pretty=oneline</mark><span class="comment"> | short | full</span></code>
 				<code>$ git log <mark>--pretty=format:"%cn"</mark><span class="comment"> | %s | %h</span></code>
 				<code>$ git log <mark>--pretty=format:"%h %s" --graph</mark></code>
-				<code>$ git log <mark class="comment">&lt; file_name &gt;</mark></code>
-				<code>$ git log <mark class="comment">&lt; branch_name &gt;</mark></code>
 		</pre>
 	</section>
 
@@ -171,6 +174,13 @@
 				<code>$ git log <mark>--author="<span class="comment">Nevcan</span>"</mark></code>
 				<code>$ git log <mark>--reflog</mark></code>
 				<span class="comment">Shows all history</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit History (log)</h2>
+		<pre>
+			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
 		</pre>
 	</section>
 
