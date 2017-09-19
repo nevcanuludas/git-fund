@@ -20,3 +20,11 @@
 footer.badge {
   position: fixed;
 }
+
+small {
+  font-size: .8em;
+}
+
+a {
+  background: unset !important;
+}
