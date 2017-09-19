@@ -75,9 +75,12 @@
 	<section class="slide">
 		<h2>Start</h2>
 		<pre>
-			<code>$ git init <mark class="comment">&lt; directory &gt;</mark></code>
-			<span class="comment">Look up hidden files <mark class="important">!</mark> Which one?</span>
 			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
+			<code>$ git init <mark class="comment">&lt; directory &gt;</mark> <span class="comment">(This command generates hidden<br>.git folder. Git keeps all of its information in one place.)</span></code>
+			<code>$ git remote -v</code>
+			<code>$ git remote add <mark class="comment">&lt; name &gt; &lt; remote &gt;</mark></code>
+			<code>$ git remote remove <mark class="comment">&lt; name &gt;</mark></code>
+			<code>$ git remote rename <mark class="comment">&lt; old_name &gt; &lt; new_name &gt;</mark></code>
 		</pre>
 	</section>
 
@@ -111,9 +114,9 @@
 		<pre>
 			<code>$ git add <mark>*</mark></code>
 			<span class="comment">Add all unstaged files</span>
-			<code>$ git add <mark>**/*.js</mark></code>
+			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
 			<span class="comment">Add all unstaged <b>JS</b> files</span>
-			<code>$ git add <mark>*.js</mark></code>
+			<code>$ git add <mark>*.<span class="comment">js</span></mark></code>
 			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
 		</pre>
 	</section>
@@ -130,7 +133,11 @@
 		<pre>
 				<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
 				<code>$ git commit <mark>--amend</mark> ??</code>
-				<code>$ git MERGE COMMİTS ??</code>
+				<br>
+				<strong>How to merge commits?</strong>
+				<code>$ git reset --soft "HEAD~<span class="comment">n</span>"</code>
+				<span class="comment">Assuming ~n is number of commits to softly un-commit (i.e. ~1, ~2,...)</span>
+				<code>$ git commit --amend</code>
 		</pre>
 	</section>
 
