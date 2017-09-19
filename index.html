@@ -56,9 +56,9 @@
 			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
 			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
 			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
-			<code>$ git config <mark>alias.<span class="comment">st "status"</span></mark></code>
+			<code>$ git config <mark>alias.<span class="comment">st "status -s"</span></mark></code>
 			<span class="comment">.git/config</span>
-			<code>$ git config --global <mark>alias.<span class="comment">st "status"</span></mark></code>
+			<code>$ git config --global <mark>alias.<span class="comment">st "status -s"</span></mark></code>
 			<span class="comment">~/.gitconfig</span>
 		</pre>
 		<footer class="footer">
@@ -101,6 +101,10 @@
 				<li>Clone a project on GitHub.</li>
 			</ol>
 		</footer>
+	</section>
+
+	<section class="slide">
+		<p>Track and Untrack files</p>
 	</section>
 
 	<section class="slide">
@@ -186,6 +190,8 @@
 		<pre>
 			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
 		</pre>
+		<p>!important push after pull</p>
+		<p>Confilct</p>
 	</section>
 
 	<section class="slide">
@@ -194,6 +200,10 @@
 			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
 		</pre>
 		<p>What about FETCH?</p>
+	</section>
+
+	<section class="slide">
+		<h2>Stash</h2>
 	</section>
 
 	<section class="slide">
@@ -301,61 +311,6 @@
 	</section>
 
 	<section class="slide grid">
-		<h2 class="shout grow">Remote Repositories</h2>
-	</section>
-
-	<section class="slide">
-		<table class="striped" style="margin-top: -40px;">
-			<tbody>
-				<tr>
-					<th scope="col">Remote Repos</th>
-					<th>Price</th>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://github.com/" target="_blank">GitHub</a></td>
-					<td>$7 per month for Developers (for privet repos)</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://bitbucket.org/product" target="_blank">Bitbucket</a></td>
-					<td>Free for up to 5 users</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://gitlab.com/" target="_blank">GitLab</a></td>
-					<td>Free</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://cloud.google.com/source-repositories/" target="_blank">Cloud Source by Google</a></td>
-					<td>$1 per project-user over 5 project-users per month</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://aws.amazon.com/codecommit/" target="_blank">AWS CodeCommit</a></td>
-					<td>Free for up to 5 users</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
-					<td>$49/yr per user (free for the first two weeks)</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="http://www.fogcreek.com/fogbugz/devhub" target="_blank">FogBugz Kiln/DevHub</a></td>
-					<td>$50 per month (up to 5 users)</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://beanstalkapp.com/" target="_blank">Beanstalk</a></td>
-					<td>$15 per month (free for the first two weeks)</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://sourceforge.net/" target="_blank">SourceForge</a></td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td scope="col"><a href="https://allura.apache.org/" target="_blank">Apache Allura</a></td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
-	</section>
-
-	<section class="slide grid">
 		<h2 class="shout grow">GUI Tools</h2>
 	</section>
 
@@ -424,6 +379,73 @@
 				</tr> -->
 			</tbody>
 		</table>
+	</section>
+
+	<section class="slide">
+		<h2>VS Code</h2>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">Remote Repositories</h2>
+	</section>
+
+	<section class="slide">
+		<table class="striped" style="margin-top: -40px;">
+			<tbody>
+				<tr>
+					<th scope="col">Remote Repos</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://github.com/" target="_blank">GitHub</a></td>
+					<td>$7 per month for Developers (for privet repos)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://bitbucket.org/product" target="_blank">Bitbucket</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://gitlab.com/" target="_blank">GitLab</a></td>
+					<td>Free</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://cloud.google.com/source-repositories/" target="_blank">Cloud Source by Google</a></td>
+					<td>$1 per project-user over 5 project-users per month</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://aws.amazon.com/codecommit/" target="_blank">AWS CodeCommit</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
+					<td>$49/yr per user (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://beanstalkapp.com/" target="_blank">Beanstalk</a></td>
+					<td>$15 per month (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="http://www.fogcreek.com/fogbugz/devhub" target="_blank">FogBugz Kiln/DevHub</a></td>
+					<td>$50 per month (up to 5 users)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://sourceforge.net/" target="_blank">SourceForge</a></td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://allura.apache.org/" target="_blank">Apache Allura</a></td>
+					<td>-</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Fork & Pull Request</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Git ignored</h2>
 	</section>
 
 	<section class="slide grid">
