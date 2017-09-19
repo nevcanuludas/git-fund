@@ -35,3 +35,7 @@ a {
 h1 {
   color: #FFF;
 }
+h2 .pagination {
+  color: lightgrey;
+  font-size: .5em;
+}

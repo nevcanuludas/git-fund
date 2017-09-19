@@ -35,9 +35,9 @@
 				Quick Start
 				<ul>
 					<li>Installation</li>
-					<li>Status</li>
 					<li>Add / Remove</li>
-					<li>Commit / Pull / Push</li>
+					<li>Status</li>
+					<li>Commit / Push / Pull</li>
 					<li>Commit History (Log)</li>
 				</ul>
 			</li>
@@ -104,6 +104,31 @@
 	</section>
 
 	<section class="slide">
+		<h2>Adding Things <span class="pagination">(1/2)</span></h2>
+		<pre>
+			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
+			<span class="comment">Add changes from all tracked and untracked files</span>
+			<code>$ git add <mark>.</mark></code>
+			<span class="comment">Stages new and modified, <b>without deleted</b></span>
+			<code>$ git add <mark>-u</mark> <span class="comment">or --update</span></code>
+			<span class="comment">Stages modified and deleted, <b>without new</b></span>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Adding Things <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git add <mark>*</mark></code>
+			<span class="comment">Add all unstaged files</span>
+			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged <b>JS</b> files</span>
+			<code>$ git add <mark>*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
+		</pre>
+	</section>
+	
+	<section class="slide">
 		<h2>Status</h2>
 		<pre>
 			<code>$ git status <mark>--long</mark></code>
@@ -124,66 +149,9 @@
 	</section>
 
 	<section class="slide">
-		<h2>Adding Things</h2>
-		<pre>
-			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
-			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
-			<span class="comment">Add changes from all tracked and untracked files</span>
-			<code>$ git add <mark>.</mark></code>
-			<span class="comment">Stages new and modified, <b>without deleted</b></span>
-			<code>$ git add <mark>-u</mark> <span class="comment">or --update</span></code>
-			<span class="comment">Stages modified and deleted, <b>without new</b></span>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Adding Things</h2>
-		<pre>
-			<code>$ git add <mark>*</mark></code>
-			<span class="comment">Add all unstaged files</span>
-			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
-			<span class="comment">Add all unstaged <b>JS</b> files</span>
-			<code>$ git add <mark>*.<span class="comment">js</span></mark></code>
-			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
-		</pre>
-	</section>
-
-	<section class="slide">
 		<h2>Removing Things</h2>
 		<pre>
-				<code>$ git reset HEAD <mark class="comment">&lt; file_name &gt;</mark></code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Committing</h2>
-		<pre>
-				<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
-				<code>$ git commit <mark>--amend</mark> ??</code>
-				<br>
-				<strong>How to merge commits?</strong>
-				<code>$ git reset --soft "HEAD~<span class="comment">n</span>"</code>
-				<span class="comment">Assuming ~n is number of commits to softly un-commit (i.e. ~1, ~2,...)</span>
-				<code>$ git commit --amend</code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Commit Subject</h2>
-		<p>How it should be?</p>
-	</section>
-
-	<section class="slide">
-		<h2>Pull Changes</h2>
-		<pre>
-			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Push Changes</h2>
-		<pre>
-			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+			<code>$ git reset HEAD <mark class="comment">&lt; file_name &gt;</mark></code>
 		</pre>
 	</section>
 
@@ -196,11 +164,44 @@
 	</section>
 
 	<section class="slide">
-			<figure>
-				<img class="cover" src="images/git-basic-commands.png" alt="Git Basic Commands">
-				<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
-			</figure>
-		</section>
+		<h2>Committing</h2>
+		<pre>
+			<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
+			<code>$ git commit <mark>--amend</mark> ??</code>
+			<br>
+			<strong>How to merge commits?</strong>
+			<code>$ git reset --soft "HEAD~<span class="comment">n</span>"</code>
+			<span class="comment">Assuming ~n is number of commits to softly un-commit (i.e. ~1, ~2,...)</span>
+			<code>$ git commit --amend</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit Subject</h2>
+		<p>How it should be?</p>
+	</section>
+	
+	<section class="slide">
+		<h2>Push Changes</h2>
+		<pre>
+			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Pull Changes</h2>
+		<pre>
+			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
+		</pre>
+		<p>What about FETCH?</p>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-basic-commands.png" alt="Git Basic Commands">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
+	</section>
 
 	<section class="slide">
 		<h2>Commit History (log)</h2>
@@ -269,8 +270,34 @@
 		<h2 class="shout grow">What is HEAD?</h2>
 	</section>
 
-	<section class="slide grid">
-		<h2 class="shout grow">What is SHA?</h2>
+	<section class="slide">
+		<p>What is difference between MERGE and REBASE?</p>
+	</section>
+
+	<section class="slide" id="cover">
+		<h2>Git Objects</h2>
+		<p>SHA-1</p>
+		<figure>
+			<img class="cover" src="images/git-sha.png" alt="Git SHA">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<p>Git is a content-addressable filesystem. It means that at the core of Git is a simple key-value data store. You can insert any kind of content into it, and it will give you back a key that you can use to retrieve the content again at any time.</p>
+	</section>
+
+	<section class="slide" id="cover">
+		<h2>Web Tools</h2>
+		<p>Remote Repositories & GUI Tools</p>
+		<figure>
+			<img class="cover" src="images/octobiwan.jpg" alt="Web Tools">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
 	</section>
 
 	<section class="slide grid">
