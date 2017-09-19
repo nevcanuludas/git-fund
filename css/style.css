@@ -28,3 +28,7 @@ small {
 a {
   background: unset !important;
 }
+
+h1 {
+  color: #FFF;
+}
