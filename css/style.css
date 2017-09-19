@@ -20,3 +20,18 @@
 footer.badge {
   position: fixed;
 }
+
+small {
+  font-size: .8em;
+}
+
+a {
+  background: unset !important;
+}
+.badge a {
+  background: #4b86c2 !important;
+}
+
+h1 {
+  color: #FFF;
+}

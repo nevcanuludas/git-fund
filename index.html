@@ -37,15 +37,17 @@
 					<li>Installation</li>
 					<li>Status</li>
 					<li>Add / Remove</li>
-					<li>Commit</li>
+					<li>Commit / Pull / Push</li>
 					<li>Commit History (Log)</li>
 				</ul>
 			</li>
 			<li>Branches</li>
+			<li>TAGs</li>
 			<li>HEAD</li>
 			<li>SHA</li>
+			<li>Remote Repos</li>
+			<li>GUI Tools</li>
 		</ol>
-		<footer class="footer">Test</footer>
 	</section>
 
 	<section class="slide">
@@ -59,10 +61,21 @@
 			<code>$ git config --global <mark>alias.<span class="comment">st "status"</span></mark></code>
 			<span class="comment">~/.gitconfig</span>
 		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Show config settings on cmd prompt</li>
+			</ul>
+		</footer>
 	</section>
 
 	<section class="slide grid">
 		<h2 class="shout grow">Very Fast Start</h2>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<iframe width="100%" height="500" src="https://www.youtube.com/embed/Sn7pNTsY5iY" frameborder="0" allowfullscreen></iframe>
+		</figure>
 	</section>
 
 	<section class="slide">
@@ -82,6 +95,12 @@
 			<code>$ git remote remove <mark class="comment">&lt; name &gt;</mark></code>
 			<code>$ git remote rename <mark class="comment">&lt; old_name &gt; &lt; new_name &gt;</mark></code>
 		</pre>
+		<footer class="footer">
+			<ol>
+				<li>Create a directory than git init. Show hidden .git folder.</li>
+				<li>Clone a project on GitHub.</li>
+			</ol>
+		</footer>
 	</section>
 
 	<section class="slide">
@@ -94,6 +113,14 @@
 			<code>$ git status <mark>--porcelain</mark></code>
 			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
 		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a new file (<span style="color: red">??</span>)</li>
+				<li>Modify a file (<span style="color: red"> M</span>)</li>
+				<li>Delete a file (<span style="color: red"> D</span>)</li>
+				<li>Stage a modified file (<span style="color: green">A </span>)</li>
+			</ul>
+		</footer>
 	</section>
 
 	<section class="slide">
@@ -144,6 +171,20 @@
 	<section class="slide">
 		<h2>Commit Subject</h2>
 		<p>How it should be?</p>
+	</section>
+
+	<section class="slide">
+		<h2>Pull Changes</h2>
+		<pre>
+			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Push Changes</h2>
+		<pre>
+			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+		</pre>
 	</section>
 
 	<section class="slide">
@@ -203,12 +244,159 @@
 		</figure>
 	</section>
 
+	<section class="slide">
+		<h2>Branch</h2>
+		<pre>
+			<code>$ git branch <mark class="comment">branch_name</mark></code>
+			<span class="comment">Creates a local branch</span>
+			<code>$ git checkout <mark class="comment">branch_name</mark></code>
+			<span class="comment">Goes that local branch</span>
+			<code>$ git branch <mark>--list</mark></code>
+			<span class="comment">Shows all local branches</span>
+			<code>$ git branch <mark>-a</mark> <span class="comment">or --all</span></code>
+			<span class="comment">Shows all local and remote branches</span>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a branch</li>
+				<li>Go that branch</li>
+				<li>git checkout -b create_and_go</li>
+			</ul>
+		</footer>
+	</section>
+
 	<section class="slide grid">
 		<h2 class="shout grow">What is HEAD?</h2>
 	</section>
 
 	<section class="slide grid">
 		<h2 class="shout grow">What is SHA?</h2>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">Remote Repositories</h2>
+	</section>
+
+	<section class="slide">
+		<table class="striped" style="margin-top: -40px;">
+			<tbody>
+				<tr>
+					<th scope="col">Remote Repos</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://github.com/" target="_blank">GitHub</a></td>
+					<td>$7 per month for Developers (for privet repos)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://bitbucket.org/product" target="_blank">Bitbucket</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://gitlab.com/" target="_blank">GitLab</a></td>
+					<td>Free</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://cloud.google.com/source-repositories/" target="_blank">Cloud Source by Google</a></td>
+					<td>$1 per project-user over 5 project-users per month</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://aws.amazon.com/codecommit/" target="_blank">AWS CodeCommit</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
+					<td>$49/yr per user (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="http://www.fogcreek.com/fogbugz/devhub" target="_blank">FogBugz Kiln/DevHub</a></td>
+					<td>$50 per month (up to 5 users)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://beanstalkapp.com/" target="_blank">Beanstalk</a></td>
+					<td>$15 per month (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://sourceforge.net/" target="_blank">SourceForge</a></td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://allura.apache.org/" target="_blank">Apache Allura</a></td>
+					<td>-</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">GUI Tools</h2>
+	</section>
+
+	<section class="slide">
+		<table class="striped" style="margin-top: -40px;">
+			<tbody>
+				<tr>
+					<th scope="col">GUI Tools</th>
+					<th>Platform</th>
+					<th scope="col">Price</th>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a></td>
+					<td>Windows, Mac</td>
+					<td scope="col"><small>Free for 5 users</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a></td>
+					<td>Windows, Mac</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://tortoisegit.org/" target="_blank">TortoiseGit</a></td>
+					<td>Windows</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free for non-commercial use</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.syntevo.com/smartgit/" target="_blank">SmartGit</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>$79/user - Free for non-commercial use</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://wiki.gnome.org/Apps/Gitg/" target="_blank">gitg</a></td>
+					<td>Windows, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://git-cola.github.io/" target="_blank">git-cola</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.cycligent.com/git-tool" target="_blank">Cycligent Git Tool</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.collab.net/products/giteye" target="_blank">GitEye</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="http://gitahead.scitools.com/" target="_blank">GitAhead</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>$29/user (Free 15 day trial)</small></td>
+				</tr>
+				<!-- <tr>
+					<td scope="col"><a href="https://wiki.gnome.org/Apps/giggle/" target="_blank">giggle</a></td>
+					<td>Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr> -->
+			</tbody>
+		</table>
 	</section>
 
 	<section class="slide grid">
