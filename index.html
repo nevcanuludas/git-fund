@@ -37,7 +37,7 @@
 					<li>Installation</li>
 					<li>Status</li>
 					<li>Add / Remove</li>
-					<li>Commit</li>
+					<li>Commit / Pull / Push</li>
 					<li>Commit History (Log)</li>
 				</ul>
 			</li>
@@ -48,7 +48,6 @@
 			<li>Remote Repos</li>
 			<li>GUI Tools</li>
 		</ol>
-		<footer class="footer">Test</footer>
 	</section>
 
 	<section class="slide">
@@ -62,6 +61,11 @@
 			<code>$ git config --global <mark>alias.<span class="comment">st "status"</span></mark></code>
 			<span class="comment">~/.gitconfig</span>
 		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Show config settings on cmd prompt</li>
+			</ul>
+		</footer>
 	</section>
 
 	<section class="slide grid">
@@ -82,6 +86,12 @@
 			<span class="comment">Look up hidden files <mark class="important">!</mark> Which one?</span>
 			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
 		</pre>
+		<footer class="footer">
+			<ol>
+				<li>Create a directory than git init. Show hidden .git folder.</li>
+				<li>Clone a project on GitHub.</li>
+			</ol>
+		</footer>
 	</section>
 
 	<section class="slide">
@@ -94,6 +104,14 @@
 			<code>$ git status <mark>--porcelain</mark></code>
 			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
 		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a new file (<span style="color: red">??</span>)</li>
+				<li>Modify a file (<span style="color: red"> M</span>)</li>
+				<li>Delete a file (<span style="color: red"> D</span>)</li>
+				<li>Stage a modified file (<span style="color: green">A </span>)</li>
+			</ul>
+		</footer>
 	</section>
 
 	<section class="slide">
@@ -140,6 +158,20 @@
 	<section class="slide">
 		<h2>Commit Subject</h2>
 		<p>How it should be?</p>
+	</section>
+
+	<section class="slide">
+		<h2>Pull Changes</h2>
+		<pre>
+			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Push Changes</h2>
+		<pre>
+			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+		</pre>
 	</section>
 
 	<section class="slide">
