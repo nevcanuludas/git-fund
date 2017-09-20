@@ -27,12 +27,12 @@
 		</figure>
 	</section>
 
-	<section class="slide">
-		<h2>Index</h2>
-		<ol class="triple">
-			<li><a href="index.html#3">Configuration</a></li>
+	<section class="slide index">
+		<h2 style="margin-top: -40px;">Index</h2>
+		<ol class="triple pg-br-ins-unset">
+			<li><a href="index.html#3">CONFIGURATION</a></li>
 			<li>
-				Quick Start
+				QUICK START
 				<ul>
 					<li>Installation</li>
 					<li>Add / Reset</li>
@@ -43,12 +43,18 @@
 					<li>Commit History (Log)</li>
 				</ul>
 			</li>
-			<li>Branches</li>
-			<li>TAGs</li>
+			<li>BRANCHES</li>
+			<li>TAGS</li>
 			<li>HEAD</li>
 			<li>SHA</li>
-			<li>Remote Repos</li>
-			<li>GUI Tools</li>
+			<li>
+				WEB TOOLS
+				<ul>
+					<li>GUI Tools</li>
+					<li>Remote Repos</li>
+				</ul>
+			</li>
+
 		</ol>
 	</section>
 
@@ -190,7 +196,19 @@
 
 	<section class="slide">
 		<h2>Commit Subject</h2>
-		<p>How it should be?</p>
+		<p>You can include keywords in your pull request titles and descriptions, as well as commit messages, to automatically close issues in GitHub.</p>
+		<p>The following keywords, followed by an issue number, will close the issue: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved.</p>
+		<p><strong>Example:</strong> fixed #54</p>
+		<pre style="border: 1px dashed #f04f33; padding: 10px;">
+			<code>git commit -m "[fixed #<mark class="comment">issue_id</mark>] <mark class="comment">Your commit message"</mark></code>
+		</pre>
+		<!-- <hr>
+		<pre>
+			<code>[#<mark class="comment">issue_id</mark> service:<mark class="comment">service_name</mark>] <mark class="comment">Your commit message</mark></code>
+		</pre>
+		<pre style="border: 1px dashed #f04f33; width: 110%; margin-left: -5%; padding: 15px;">
+			<code>git commit -m "<mark>[#123 service:jira] Fixed slider component</mark>"</code>
+		</pre> -->
 	</section>
 	
 	<section class="slide">

@@ -35,7 +35,18 @@ a {
 h1 {
   color: #FFF;
 }
+
 h2 .pagination {
   color: lightgrey;
   font-size: .5em;
+}
+
+.pg-br-ins-unset li {
+   page-break-inside: unset !important;
+}
+
+.index ul {
+  margin-left: 0 !important;
+  color: #555;
+
 }
