@@ -32,23 +32,36 @@
 		<ol class="triple pg-br-ins-unset">
 			<li><a href="index.html#3">CONFIGURATION</a></li>
 			<li>
-				QUICK START
+				<a href="index.html#4">QUICK START</a>
 				<ul>
 					<li>Installation</li>
 					<li>Add / Reset</li>
 					<li>Status</li>
-					<li>.gitignore</li>
+					<li>Git Ignore</li>
 					<li>Commit / Push</li>
 					<li>Pull / Fetch</li>
+					<li>Stash</li>
 					<li>Commit History (Log)</li>
 				</ul>
 			</li>
-			<li>BRANCHES</li>
-			<li>TAGS</li>
-			<li>HEAD</li>
-			<li>SHA</li>
 			<li>
-				WEB TOOLS
+				<a href="index.html#25">BRANCHES</a>
+				<ul>
+					<li>HEAD</li>
+					<li>Merge</li>
+					<li>Rebase</li>
+				</ul>
+			</li>
+			<li><a href="index.html#">REMOTE REPOS</a></li>
+			<li>
+				<a href="index.html#29">GIT OBJECTS</a>
+				<ul>
+					<li>SHA</li>
+					<li>Tags</li>
+				</ul>
+			</li>
+			<li>
+				<a href="index.html#32">WEB TOOLS</a>
 				<ul>
 					<li>GUI Tools</li>
 					<li>Remote Repos</li>
@@ -111,7 +124,7 @@
 
 	<section class="slide">
 		<h2>File Status Lifecycle</h2>
-		<img src="images/lifecycle.png" alt="File Status Lifecycle">
+		<img src="images/lifecycle.jpg" alt="File Status Lifecycle">
 		<footer class="footer">
 			<p>Track and Untrack files</p>
 		</footer>
@@ -170,7 +183,21 @@
 	</section>
 
 	<section class="slide">
-		<h2>.gitignore</h2>
+		<h2>Git Ignore</h2>
+		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark></p>
+		<pre>
+			<code>file_name</code>
+			<code>*.js <span class="comment">or</span> **/*.js</code>
+		</pre>
+		<hr>
+		<p>
+			For <mark>local ignoring</mark> add file names in <mark><strong>.git/info/exclude</strong></mark>
+			<br>
+			<strong>*</strong> if you have <mark class="important">already changed</mark> file, run the following code;
+		</p>
+		<pre class="important" style="width: 96%;">
+			<code>$ git update-index --assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
+		</pre>
 	</section>
 	
 	<section class="slide">
@@ -199,8 +226,8 @@
 		<p>You can include keywords in your pull request titles and descriptions, as well as commit messages, to automatically close issues in GitHub.</p>
 		<p>The following keywords, followed by an issue number, will close the issue: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved.</p>
 		<p><strong>Example:</strong> fixed #54</p>
-		<pre style="border: 1px dashed #f04f33; padding: 10px;">
-			<code>git commit -m "[fixed #<mark class="comment">issue_id</mark>] <mark class="comment">Your commit message"</mark></code>
+		<pre class="important" style="width: 104%; margin-left: -2%;">
+			<code>$ git commit -m "[fixed #<mark class="comment">issue_id</mark>] <mark class="comment">Your commit message"</mark></code>
 		</pre>
 		<!-- <hr>
 		<pre>
@@ -215,9 +242,12 @@
 		<h2>Push Changes</h2>
 		<pre>
 			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+			<span class="comment">Track remote branches by local branches</span>
+			<code>$ git <mark>remote show origin</mark></code>
+			<span class="comment">Shows all branches (local & remote) tracking and status info</span>
 		</pre>
-		<p>!important push after pull</p>
-		<p>Confilct</p>
+		<p><mark class="important">Important!</mark> You always <mark><strong>PUSH</strong></mark> after <mark><strong>PULL</strong></mark></p>
+		<p>Confilct ??</p>
 	</section>
 
 	<section class="slide">
@@ -225,11 +255,15 @@
 		<pre>
 			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
 		</pre>
-		<p>What about FETCH?</p>
+		<p>What about FETCH ??</p>
 	</section>
 
 	<section class="slide">
 		<h2>Stash</h2>
+		<pre>
+			<code>$ git stash</code>
+			<code>$ git stash apply</code>
+		</pre>
 	</section>
 
 	<section class="slide">
@@ -237,10 +271,13 @@
 			<img class="cover" src="images/git-basic-commands.png" alt="Git Basic Commands">
 			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
 		</figure>
+		<footer class="footer">
+			<p style="font-size: 3em;">Time Break!</p>
+		</footer>
 	</section>
 
 	<section class="slide">
-		<h2>Commit History (log)</h2>
+		<h2>Commit History (log) <span class="pagination">(1/3)</span></h2>
 		<pre>
 				<code>$ git log</code> <span class="comment"></span>
 				<code>$ git log <mark>-2</mark></code>
@@ -253,7 +290,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Commit History (log)</h2>
+		<h2>Commit History (log) <span class="pagination">(2/3)</span></h2>
 		<pre>
 				<code>$ git log <mark>--since="<span class="comment">2 weeks ago</span>"</mark></code>
 				<code>$ git log <mark>--until="<span class="comment">yesterday</span>"</mark></code>
@@ -264,7 +301,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Commit History (log)</h2>
+		<h2>Commit History (log) <span class="pagination">(3/3)</span></h2>
 		<pre>
 			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
 		</pre>
@@ -298,6 +335,8 @@
 				<li>Create a branch</li>
 				<li>Go that branch</li>
 				<li>git checkout -b create_and_go</li>
+				<li>git branch -d delete_branch</li>
+				<li>Rename ?</li>
 			</ul>
 		</footer>
 	</section>

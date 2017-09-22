@@ -48,5 +48,19 @@ h2 .pagination {
 .index ul {
   margin-left: 0 !important;
   color: #555;
+}
 
+.index a {
+  font-weight: bold;
+}
+
+mark.important {
+  background-color: #ff5f5f;
+  color: #FFF;
+  font-weight: bold;
+}
+
+pre.important {
+  border: 1px dashed #f04f33; 
+  padding: 10px;
 }
