@@ -31,37 +31,35 @@
 		<h2 style="margin-top: -40px;">Index</h2>
 		<ol class="triple pg-br-ins-unset">
 			<li><a href="index.html#3">CONFIGURATION</a></li>
-			<li>
-				<a href="index.html#4">QUICK START</a>
+			<li><a href="index.html#4">QUICK START</a>
 				<ul>
-					<li>Installation</li>
-					<li>Add / Reset</li>
-					<li>Status</li>
-					<li>Git Ignore</li>
-					<li>Commit / Push</li>
-					<li>Pull / Fetch</li>
-					<li>Stash</li>
-					<li>Commit History (Log)</li>
+					<li><a href="index.html#7">Installation</a></li>
+					<li><a href="index.html#9">Status</a></li>
+					<li><a href="index.html#10">Add / Reset</a></li>
+					<li><a href="index.html#13">Git Ignore</a></li>
+					<li><a href="index.html#16">Commit / Push</a></li>
+					<li><a href="index.html#19">Pull / Fetch</a></li>
+					<li><a href="index.html#20">Stash</a></li>
+					<li><a href="index.html#22">Undoing Changes</a></li>
+					<li><a href="index.html#24">Commit History (Log)</a></li>
+					<li><a href="index.html#27">Show / Diff</a></li>
 				</ul>
 			</li>
-			<li>
-				<a href="index.html#25">BRANCHES</a>
+			<li><a href="index.html#27">BRANCHES</a>
 				<ul>
 					<li>HEAD</li>
 					<li>Merge</li>
 					<li>Rebase</li>
 				</ul>
 			</li>
-			<li><a href="index.html#">REMOTE REPOS</a></li>
-			<li>
-				<a href="index.html#29">GIT OBJECTS</a>
+			<li><a href="index.html#32">REMOTE REPOS</a></li>
+			<li><a href="index.html#33">GIT OBJECTS</a>
 				<ul>
 					<li>SHA</li>
 					<li>Tags</li>
 				</ul>
 			</li>
-			<li>
-				<a href="index.html#32">WEB TOOLS</a>
+			<li><a href="index.html#36">WEB TOOLS</a>
 				<ul>
 					<li>GUI Tools</li>
 					<li>Remote Repos</li>
@@ -84,6 +82,8 @@
 		</pre>
 		<footer class="footer">
 			<p>Show config settings on terminal</p>
+			<p>"--global"</p>
+			<p>Short flag vs. Long flag</p>
 		</footer>
 	</section>
 
@@ -105,7 +105,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Start</h2>
+		<h2>Installation</h2>
 		<pre>
 			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
 			<code>$ git init <mark class="comment">&lt; directory &gt;</mark> <span class="comment">(This command generates hidden<br>.git folder. Git keeps all of its information in one place.)</span></code>
@@ -127,6 +127,26 @@
 		<img src="images/lifecycle.jpg" alt="File Status Lifecycle">
 		<footer class="footer">
 			<p>Track and Untrack files</p>
+		</footer>
+	</section>
+	
+	<section class="slide">
+		<h2>Status</h2>
+		<pre>
+			<code>$ git status <mark>--long</mark></code>
+			<span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark></span>
+			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code>
+			<span class="comment">Give the output in the short-format</span>
+			<code>$ git status <mark>--porcelain</mark></code>
+			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a new file (<span style="color: red">??</span>)</li>
+				<li>Modify a file (<span style="color: red"> M</span>)</li>
+				<li>Delete a file (<span style="color: red"> D</span>)</li>
+				<li>Stage a modified file (<span style="color: green">A </span>)</li>
+			</ul>
 		</footer>
 	</section>
 
@@ -154,31 +174,14 @@
 			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
 		</pre>
 	</section>
-	
-	<section class="slide">
-		<h2>Status</h2>
-		<pre>
-			<code>$ git status <mark>--long</mark></code>
-			<span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark></span>
-			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code>
-			<span class="comment">Give the output in the short-format</span>
-			<code>$ git status <mark>--porcelain</mark></code>
-			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
-		</pre>
-		<footer class="footer">
-			<ul>
-				<li>Create a new file (<span style="color: red">??</span>)</li>
-				<li>Modify a file (<span style="color: red"> M</span>)</li>
-				<li>Delete a file (<span style="color: red"> D</span>)</li>
-				<li>Stage a modified file (<span style="color: green">A </span>)</li>
-			</ul>
-		</footer>
-	</section>
 
 	<section class="slide">
-		<h2>Removing Things</h2>
+		<h2>Reseting Things</h2>
 		<pre>
-			<code>$ git reset HEAD <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git reset <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git reset --soft HEAD</code>
+			<code>$ git reset --mixed HEAD</code>
+			<code>$ git reset --hard HEAD</code>
 		</pre>
 	</section>
 
@@ -198,6 +201,14 @@
 		<pre class="important" style="width: 96%;">
 			<code>$ git update-index --assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
 		</pre>
+		<footer class="footer">
+			<pre>
+				<code>$ git update-index --no-assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
+				<span>Assume changes</span>
+				<code>$ git ls-files -v | grep '^[[:lower:]]'</code>
+				<span>Shows assume-unchanges list</span>
+			</pre>
+		</footer>
 	</section>
 	
 	<section class="slide">
@@ -259,10 +270,30 @@
 	</section>
 
 	<section class="slide">
-		<h2>Stash</h2>
+		<h2>Stash <span class="pagination">(1/2)</span></h2>
 		<pre>
-			<code>$ git stash</code>
-			<code>$ git stash apply</code>
+			<code>$ git stash <mark>save "<span class="comment">Your stash subject</span>"</mark></code>
+			<code>$ git stash <mark>list</mark></code>
+			<code>$ git stash <mark>apply stash@{<span class="comment">n</span>}</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Stash <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git shash <mark>pop</mark></code>
+			<span class="comment">Applies first stash and deletes it</span>
+			<code>$ git stash <mark>drop stash @{<span class="comment">n</span>}</mark></code>
+			<span class="comment">Deletes chosen stash</span>
+			<code>$ git stash <mark>clear</mark></code>
+			<span class="comment">Deletes all saved stashes</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Undoing Changes</h2>
+		<pre>
+			<code>$ git commit --amend</code>
 		</pre>
 	</section>
 
@@ -305,6 +336,14 @@
 		<pre>
 			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Show</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Diff</h2>
 	</section>
 
 	<section class="slide" id="cover">
@@ -356,6 +395,10 @@
 
 	<section class="slide">
 		<p>What is difference between MERGE and REBASE?</p>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">REMOTE REPOSITORIES</h2>
 	</section>
 
 	<section class="slide" id="cover">

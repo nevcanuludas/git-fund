@@ -53,6 +53,17 @@ h2 .pagination {
 .index a {
   font-weight: bold;
 }
+.index ul a {
+  color: #555;
+  font-weight: 400;
+}
+
+.index a:hover {
+  background-color: #EEE !important;
+  margin: -5px -10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
 mark.important {
   background-color: #ff5f5f;
