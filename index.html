@@ -278,8 +278,11 @@
 		<h2>Stash <span class="pagination">(1/2)</span></h2>
 		<pre>
 			<code>$ git stash <mark>save "<span class="comment">Your stash subject</span>"</mark></code>
+			<span class="comment">Puts all changed files into stash</span>
 			<code>$ git stash <mark>list</mark></code>
+			<span class="comment">Lists all stashes</span>
 			<code>$ git stash <mark>apply stash@{<span class="comment">n</span>}</mark></code>
+			<span class="comment">Applies chosen stash</span>
 		</pre>
 	</section>
 
@@ -288,7 +291,7 @@
 		<pre>
 			<code>$ git shash <mark>pop</mark></code>
 			<span class="comment">Applies first stash and deletes it</span>
-			<code>$ git stash <mark>drop stash @{<span class="comment">n</span>}</mark></code>
+			<code>$ git stash <mark>drop stash@{<span class="comment">n</span>}</mark></code>
 			<span class="comment">Deletes chosen stash</span>
 			<code>$ git stash <mark>clear</mark></code>
 			<span class="comment">Deletes all saved stashes</span>
