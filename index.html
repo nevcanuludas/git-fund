@@ -275,6 +275,15 @@
 	</section>
 
 	<section class="slide">
+		<h2>Merging Types</h2>
+		<ul>
+			<li>Fast-Forward <!--: Basit bazı durumlarda branch'lerden bir tanesinde herhangi bir değişiklik yapılmamıştır ve bu branch'in yukarıdaki bölümde belirttiğimiz ortak commit'i ve son commit'i aynıdır. Bu durumda merge işlemi çok basitleşir ve git diğer branch'in tüm commit'lerini ortak commit'in üzerine ekleyerek merge işlemini yapar.--></li>
+			<li>Merge Commit <!--: Fakat çoğu zaman her iki branch'de birbirinden bağımsız olarak değişikliğe uğrar ve tarihçe açısından birbirinden uzaklaşırlar. Bu durumda merge işlemini yapmak için Git'in her iki branch arasındaki değişiklikleri içeren otomatik bir commit oluşturması gerekir. Oluşturulan bu commit'e Git terminolojisinde "Merge Commit" denir.--></li>
+			<li>Conflict</li>
+		</ul>
+	</section>
+
+	<section class="slide">
 		<h2>Stash <span class="pagination">(1/2)</span></h2>
 		<pre>
 			<code>$ git stash <mark>save "<span class="comment">Your stash subject</span>"</mark></code>
@@ -413,10 +422,19 @@
 
 	<section class="slide">
 		<h2>Remote Branches</h2>
-		<p>Deleting Remote Branches</p>
+		<p>Deleting Remote Branches <span class="pagination">(1/2)</span></p>
 		<pre>
 			<code>$ git push origin --delete <span class="comment">branch_name</span>></code>
 			<code>$ git remote show origin</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Remote Branches</h2>
+		<p>Pulling Remote Branches <span class="pagination">(2/2)</span></p>
+		<pre>
+			<code>$ e <span class="comment">branch_name</span>></code>
+			<code>$ in</code>
 		</pre>
 	</section>
 
@@ -444,8 +462,32 @@
 	</section>
 
 	<section class="slide">
-		<h2>Tags</h2>
+		<h2>Tagging</h2>
+		<pre>
+			<code>$ git tag <mark class="comment">v1</mark></code>
+			<span class="comment">Creating a tag</span>
+			<code>$ git tag -a <mark class="comment">v1.2</mark> -m "<mark class="comment">my version 1.2git</mark>"</code>
+			<span class="comment">Creating an annotated tag</span>
+			<code>$ git tag <span class="comment">or w tag_name</code>
+			<span class="comment">Listing the available tags in Git is straightforward</span>
+			<code>$ git tag -l "<mark class="comment">v1*</mark>"</code>
+			<span class="comment">Lists the spesific named tags</span>
+		</pre>
 		<p></p>
+	</section>
+
+	<section class="slide">
+		<h2>Sharing Tags</h2>
+		<pre>
+			<code>$ git push origin <mark class="comment">v1</mark></code>
+		</pre>
+		<br>
+		<hr>
+		<br>
+		<h2>Checking Out Tags</h2>
+		<pre>
+			<code>$ git checkout <mark class="comment">v1</mark></code>
+		</pre>
 	</section>
 
 	<section class="slide" id="cover">
