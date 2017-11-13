@@ -75,3 +75,7 @@ pre.important {
   border: 1px dashed #f04f33; 
   padding: 10px;
 }
+
+.comment {
+  color:#999
+}

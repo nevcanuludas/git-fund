@@ -178,22 +178,33 @@
 	</section>
 
 	<section class="slide">
-		<h2>Reseting Things</h2>
+		<h2>Reseting Things <span class="pagination">(1/2)</span></h2>
 		<pre>
 			<code>$ git reset <mark class="comment">&lt; file_name &gt;</mark></code>
 			<span class="comment">Take files back from staging area to working area</span>
-			<code>$ git reset --soft HEAD</code>
-			<code>$ git reset --mixed HEAD</code>
-			<code>$ git reset --hard HEAD</code>
+			<br><br>
+			<img src="images/reset.svg" alt="reset">
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Reseting Things <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git reset <mark>--soft HEAD</mark></code>
+			<code>$ git reset <mark>--mixed HEAD</mark></code>
+			<code>$ git reset <mark>--hard HEAD</mark></code>
+			<div style="position: absolute; right: 0; bottom: 0;">
+				<img src="images/reset2.svg" alt="reset" height="450">
+			</div>
 		</pre>
 	</section>
 
 	<section class="slide">
 		<h2>Git Ignore</h2>
-		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark></p>
+		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark> <span class="comment">(You have to <mark class="important">PUSH</mark> this!)</span></p>
 		<pre>
 			<code>file_name</code>
-			<code>*.js <span class="comment">or</span> **/*.js</code>
+			<code>*.js <span class="comment">or</span> ./\*.js</code>
 		</pre>
 		<hr>
 		<p>
