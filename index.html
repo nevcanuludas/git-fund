@@ -237,13 +237,15 @@
 		<h2>Committing</h2>
 		<pre>
 			<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
-			<code>$ git commit <mark>--amend</mark> ??</code>
-			<br>
-			<strong>How to merge commits?</strong>
+			<code>$ git commit <mark>--amend -m "<span class="comment">Edited commit subject</span>"</mark></code>
+			<!-- <strong>How to merge commits?</strong>
 			<code>$ git reset --soft "HEAD~<span class="comment">n</span>"</code>
 			<span class="comment">Assuming ~n is number of commits to softly un-commit (i.e. ~1, ~2,...)</span>
-			<code>$ git commit --amend</code>
+			<code>$ git commit --amend</code> -->
 		</pre>
+		<div style="text-align: right;">
+			<img src="images\in-case-of-fire.jpg" alt="In case of fire" height="300">
+		</div>
 	</section>
 
 	<section class="slide">
@@ -272,7 +274,6 @@
 			<span class="comment">Shows all branches (local & remote) tracking and status info</span>
 		</pre>
 		<p><mark class="important">Important!</mark> You always <mark><strong>PUSH</strong></mark> after <mark><strong>PULL</strong></mark></p>
-		<p>Confilct ??</p>
 	</section>
 
 	<section class="slide">
@@ -295,6 +296,9 @@
 			<li>Merge Commit <!--: Fakat çoğu zaman her iki branch'de birbirinden bağımsız olarak değişikliğe uğrar ve tarihçe açısından birbirinden uzaklaşırlar. Bu durumda merge işlemini yapmak için Git'in her iki branch arasındaki değişiklikleri içeren otomatik bir commit oluşturması gerekir. Oluşturulan bu commit'e Git terminolojisinde "Merge Commit" denir.--></li>
 			<li>Conflict</li>
 		</ul>
+		<div style="text-align: center;">
+			<img src="images/merge-conflict.png" alt="Merge conflict">
+		</div>
 	</section>
 
 	<section class="slide">
