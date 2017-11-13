@@ -31,7 +31,7 @@
 		<h2 style="margin-top: -40px;">Index</h2>
 		<ol class="triple pg-br-ins-unset">
 			<li><a href="index.html#3">CONFIGURATION</a></li>
-			<li><a href="index.html#4">QUICK START</a>
+			<li><a href="index.html#5">QUICK START</a>
 				<ul>
 					<li><a href="index.html#7">Installation</a></li>
 					<li><a href="index.html#9">Status</a></li>
@@ -45,24 +45,24 @@
 					<li><a href="index.html#28">Show / Diff</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#27">BRANCHES</a>
+			<li><a href="index.html#30">BRANCHES</a>
 				<ul>
-					<li>HEAD</li>
-					<li>Merge</li>
-					<li>Rebase</li>
+					<li><a href="index.html#32">HEAD</a></li>
+					<li><a href="index.html#35">Merge / Rebase</a></li>
+					<li></li>
 				</ul>
 			</li>
-			<li><a href="index.html#32">REMOTE REPOS</a></li>
-			<li><a href="index.html#33">GIT OBJECTS</a>
+			<li><a href="index.html#36">REMOTE REPOS</a></li>
+			<li><a href="index.html#37">GIT OBJECTS</a>
 				<ul>
-					<li>SHA</li>
-					<li>Tags</li>
+					<li><a href="index.html#38">SHA</a></li>
+					<li><a href="index.html#39">Taggging</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#36">WEB TOOLS</a>
+			<li><a href="index.html#41">WEB TOOLS</a>
 				<ul>
-					<li>GUI Tools</li>
-					<li>Remote Repos</li>
+					<li><a href="index.html#42">GUI Tools</a></li>
+					<li><a href="index.html#45">Remote Repos</a></li>
 				</ul>
 			</li>
 
@@ -151,7 +151,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Adding Things <span class="pagination">(1/2)</span></h2>
+		<h2>Adding Things to Staging Area <span class="pagination">(1/2)</span></h2>
 		<pre>
 			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
 			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
@@ -164,14 +164,16 @@
 	</section>
 	
 	<section class="slide">
-		<h2>Adding Things <span class="pagination">(2/2)</span></h2>
+		<h2>Adding Things to Staging Area <span class="pagination">(2/2)</span></h2>
 		<pre>
 			<code>$ git add <mark>*</mark></code>
 			<span class="comment">Add all unstaged files</span>
-			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
-			<span class="comment">Add all unstaged <b>JS</b> files</span>
 			<code>$ git add <mark>*.<span class="comment">js</span></mark></code>
-			<span class="comment">Add all unstaged JS files <b>in directory</b></span>
+			<span class="comment">Add all unstaged JS files <strong>in current directory</strong></span>
+			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files <strong>in child directories</strong></span>
+			<code>$ git add <mark>./\*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files</span>
 		</pre>
 	</section>
 
@@ -179,6 +181,7 @@
 		<h2>Reseting Things</h2>
 		<pre>
 			<code>$ git reset <mark class="comment">&lt; file_name &gt;</mark></code>
+			<span class="comment">Take files back from staging area to working area</span>
 			<code>$ git reset --soft HEAD</code>
 			<code>$ git reset --mixed HEAD</code>
 			<code>$ git reset --hard HEAD</code>
@@ -644,6 +647,16 @@
 		<h2>README.md</h2>
 		<p><strong>.md</strong> is markdown. <strong>README.md</strong> is used to generate the html summary you see at the bottom of projects.</p>
 		<p><strong>Example:</strong><br><a href="https://github.com/nevcanuludas/git-presentation">https://github.com/nevcanuludas/git-presentation</a></p>
+	</section>
+
+	<section class="slide">
+		<h2>Nice to look up</h2>
+		<ul>
+			<li><a href="https://git-scm.com/docs">Git Reference</a> <span class="comment">(git-scm.com)</span></li>
+			<li><a href="https://aliozgur.gitbooks.io/git101/">Türkçe Git 101</a> <span class="comment">(gitbooks.io)</span></li>
+			<li><a href="https://app.pluralsight.com/library/courses/how-git-works/table-of-contents">How Git Works</a> <span class="comment">(pluralsight.com)</span></li>
+			<li><a href="https://www.atlassian.com/git/tutorials/advanced-overview">Advanced Git Tutorials</a> <span class="comment">(atlassian.com)</span></li>
+		</ul>
 	</section>
 
 	<section class="slide">
