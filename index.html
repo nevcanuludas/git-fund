@@ -65,42 +65,17 @@
 					<li><a href="index.html#45">Remote Repos</a></li>
 				</ul>
 			</li>
-
+			
 		</ol>
 	</section>
-
-	<section class="slide">
-		<h2>Configuration</h2>
-		<pre>
-			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
-			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
-			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
-			<code>$ git config <mark>alias.<span class="comment">st "status -s"</span></mark></code>
-			<span class="comment">.git/config</span>
-			<code>$ git config --global <mark>alias.<span class="comment">st "status -s"</span></mark></code>
-			<span class="comment">~/.gitconfig</span>
-		</pre>
-		<footer class="footer">
-			<p>Show config settings on terminal</p>
-			<p>"--global"</p>
-			<p>Short flag vs. Long flag</p>
-		</footer>
-	</section>
-
+	
 	<section class="slide grid">
 		<h2 class="shout grow">Quick Start</h2>
 	</section>
-
+	
 	<section class="slide">
 		<figure>
 			<iframe width="100%" height="460" src="https://www.youtube.com/embed/Sn7pNTsY5iY" frameborder="0" allowfullscreen></iframe>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<figure>
-			<img class="cover" src="images/git-work-system.png" alt="Git Work System">
-			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
 		</figure>
 	</section>
 
@@ -120,6 +95,31 @@
 				<li>Clone a project on GitHub.</li>
 			</ol>
 		</footer>
+	</section>
+	
+	<section class="slide">
+		<h2>Configuration</h2>
+		<pre>
+			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
+			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
+			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
+			<code>$ git config <mark>alias.<span class="comment">st "status -s"</span></mark></code>
+			<span class="comment">.git/config</span>
+			<code>$ git config --global <mark>alias.<span class="comment">st "status -s"</span></mark></code>
+			<span class="comment">~/.gitconfig</span>
+		</pre>
+		<footer class="footer">
+			<p>Show config settings on terminal</p>
+			<p>"--global"</p>
+			<p>Short flag vs. Long flag</p>
+		</footer>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-work-system.png" alt="Git Work System">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
 	</section>
 
 	<section class="slide">
@@ -198,6 +198,17 @@
 			</div>
 		</pre>
 	</section>
+	
+	<section class="slide">
+		<h2>Discard Changes</h2>
+		<pre>
+			<code>$ git <mark>reset --hard HEAD</mark></code>
+			<br>
+		</pre>
+		<div style="text-align: center;">
+			<img src="images/github-discard.png" alt="">
+		</div>
+	</section>
 
 	<section class="slide">
 		<h2>Git Ignore</h2>
@@ -249,7 +260,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Commit Subject</h2>
+		<h2>Commit Subject <span class="pagination">(1/2)</span></h2>
 		<p>You can include keywords in your pull request titles and descriptions, as well as commit messages, to automatically close issues in GitHub.</p>
 		<p>The following keywords, followed by an issue number, will close the issue: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved.</p>
 		<p><strong>Example:</strong> fixed #54</p>
@@ -263,6 +274,13 @@
 		<pre style="border: 1px dashed #f04f33; width: 110%; margin-left: -5%; padding: 15px;">
 			<code>git commit -m "<mark>[#123 service:jira] Fixed slider component</mark>"</code>
 		</pre> -->
+	</section>
+
+	<section class="slide">
+		<h2>Commit Subject <span class="pagination">(2/2)</span></h2>
+		<a href="https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53">GitHub - Commit message guidelines</a>
+		<br>
+		<a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>
 	</section>
 	
 	<section class="slide">
@@ -280,13 +298,13 @@
 		<h2>Pull Changes</h2>
 		<pre>
 			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
+			<span class="comment">You have all changes on your working area</span>
 		</pre>
-		<p>You have all changes on your working area</p>
 		<h2>Fetch Changes</h2>
 		<pre>
 			<code>$git fetch <mark><span class="comment">origin master</span></mark></code>
+			<span class="comment">Your working area does not change. You only can see your teammates changes with FETCH command.</span>
 		</pre>
-		<p>Your working area does not change. You only can see your teammates changes with FETCH command.</p>
 	</section>
 
 	<section class="slide">
@@ -323,17 +341,6 @@
 			<code>$ git stash <mark>clear</mark></code>
 			<span class="comment">Deletes all saved stashes</span>
 		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Discard Changes</h2>
-		<pre>
-			<code>$ git <mark>reset --hard</mark></code>
-			<br>
-		</pre>
-		<div style="text-align: center;">
-			<img src="images/github-discard.png" alt="">
-		</div>
 	</section>
 
 	<section class="slide">
@@ -483,8 +490,9 @@
 			</figcaption>
 		</figure>
 	</section>
-
+	
 	<section class="slide">
+		<h2>Git Objects</h2>
 		<p>Git is a content-addressable filesystem. It means that at the core of Git is a simple key-value data store. You can insert any kind of content into it, and it will give you back a key that you can use to retrieve the content again at any time.</p>
 	</section>
 
@@ -656,6 +664,10 @@
 				</tr>
 			</tbody>
 		</table>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout grow">Git <span style="color: red">!=</span> GitHub</h2>
 	</section>
 
 	<section class="slide">
