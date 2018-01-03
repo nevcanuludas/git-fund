@@ -451,9 +451,15 @@
 
 	<section class="slide">
 		<h2>Remote Branches</h2>
-		<p>Deleting Remote Branches <span class="pagination">(1/2)</span></p>
+		<p>Create Remote Branches</p>
 		<pre>
-			<code>$ git push origin --delete <span class="comment">branch_name</span>></code>
+			<code>$ git push &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code>
+			<code>git push &lt;REMOTENAME&gt; &lt;LOCALBRANCHNAME&gt;:&lt;REMOTEBRANCHNAME&gt;</code>
+		</pre>
+
+		<p>Deleting Remote Branches</p>
+		<pre>
+			<code>$ git push origin --delete <span class="comment">&lt; branch_name &gt;</span></code>
 			<code>$ git remote show origin</code>
 		</pre>
 	</section>
