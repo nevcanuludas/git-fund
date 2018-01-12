@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<title>Git Presentation (Source Control Management)</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/screen-16x10.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Git Presentation</h1>
+		<p>Source Control Management (<a href="https://git-scm.com" target="_blank">git-scm.com</a>)</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>Git Presentation</h2>
+		<p>by <a href="https://github.com/nevcanuludas/" target="_blank">Nevcan Uludaş</a></p>
+		<figure>
+			<img class="cover" src="img/cover.jpg" alt="Hands on the orange typewriter in a park">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide index">
+		<h2 style="margin-top: -40px;">Index</h2>
+		<ol class="triple pg-br-ins-unset">
+			<li><a href="index.html#3">CONFIGURATION</a></li>
+			<li><a href="index.html#5">QUICK START</a>
+				<ul>
+					<li><a href="index.html#7">Installation</a></li>
+					<li><a href="index.html#9">Status</a></li>
+					<li><a href="index.html#10">Add / Reset</a></li>
+					<li><a href="index.html#13">Git Ignore</a></li>
+					<li><a href="index.html#16">Commit / Push</a></li>
+					<li><a href="index.html#19">Pull / Fetch</a></li>
+					<li><a href="index.html#21">Stash</a></li>
+					<li><a href="index.html#23">Undoing Changes</a></li>
+					<li><a href="index.html#25">Commit History (Log)</a></li>
+					<li><a href="index.html#28">Show / Diff</a></li>
+				</ul>
+			</li>
+			<li><a href="index.html#30">BRANCHES</a>
+				<ul>
+					<li><a href="index.html#32">HEAD</a></li>
+					<li><a href="index.html#35">Merge / Rebase</a></li>
+					<li></li>
+				</ul>
+			</li>
+			<li><a href="index.html#36">REMOTE REPOS</a></li>
+			<li><a href="index.html#37">GIT OBJECTS</a>
+				<ul>
+					<li><a href="index.html#38">SHA</a></li>
+					<li><a href="index.html#39">Taggging</a></li>
+				</ul>
+			</li>
+			<li><a href="index.html#41">WEB TOOLS</a>
+				<ul>
+					<li><a href="index.html#42">GUI Tools</a></li>
+					<li><a href="index.html#45">Remote Repos</a></li>
+				</ul>
+			</li>
+			
+		</ol>
+	</section>
+	
+	<section class="slide grid">
+		<h2 class="shout grow">Quick Start</h2>
+	</section>
+	
+	<section class="slide">
+		<figure>
+			<iframe width="100%" height="460" src="https://www.youtube.com/embed/Sn7pNTsY5iY" frameborder="0" allowfullscreen></iframe>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Installation</h2>
+		<pre>
+			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
+			<code>$ git init <mark class="comment">&lt; directory &gt;</mark> <span class="comment">(This command generates hidden<br>.git folder. Git keeps all of its information in one place.)</span></code>
+			<code>$ git remote -v</code>
+			<code>$ git remote add <mark class="comment">&lt; name &gt; &lt; remote &gt;</mark></code>
+			<code>$ git remote remove <mark class="comment">&lt; name &gt;</mark></code>
+			<code>$ git remote rename <mark class="comment">&lt; old_name &gt; &lt; new_name &gt;</mark></code>
+		</pre>
+		<footer class="footer">
+			<ol>
+				<li>Create a directory than git init. Show hidden .git folder.</li>
+				<li>Clone a project on GitHub.</li>
+			</ol>
+		</footer>
+	</section>
+	
+	<section class="slide">
+		<h2>Configuration</h2>
+		<pre>
+			<code>$ git config --global user.name "<mark class="comment">Nevcan Uludaş</mark>"</code>
+			<code>$ git config --global user.email "<mark class="comment">nevcan@uludas.com</mark>"</code>
+			<code>$ git config <mark>-l</mark> <span class="comment">or --list</span></code>
+			<code>$ git config <mark>alias.<span class="comment">st "status -s"</span></mark></code>
+			<span class="comment">.git/config</span>
+			<code>$ git config --global <mark>alias.<span class="comment">st "status -s"</span></mark></code>
+			<span class="comment">~/.gitconfig</span>
+		</pre>
+		<footer class="footer">
+			<p>Show config settings on terminal</p>
+			<p>"--global"</p>
+			<p>Short flag vs. Long flag</p>
+		</footer>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-work-system.png" alt="Git Work System">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>File Status Lifecycle</h2>
+		<img src="images/lifecycle.jpg" alt="File Status Lifecycle">
+		<footer class="footer">
+			<p>Track and Untrack files</p>
+		</footer>
+	</section>
+	
+	<section class="slide">
+		<h2>Status</h2>
+		<pre>
+			<code>$ git status <mark>--long</mark></code>
+			<span class="comment">Give the output in the long-format. This is the <mark class="important"> default </mark></span>
+			<code>$ git status <mark>-s</mark> <span class="comment">or --short</span></code>
+			<span class="comment">Give the output in the short-format</span>
+			<code>$ git status <mark>--porcelain</mark></code>
+			<span class="comment">Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration</span>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a new file (<span style="color: red">??</span>)</li>
+				<li>Modify a file (<span style="color: red"> M</span>)</li>
+				<li>Delete a file (<span style="color: red"> D</span>)</li>
+				<li>Stage a modified file (<span style="color: green">A </span>)</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide">
+		<h2>Adding Things to Staging Area <span class="pagination">(1/2)</span></h2>
+		<pre>
+			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
+			<span class="comment">Add changes from all tracked and untracked files</span>
+			<code>$ git add <mark>.</mark></code>
+			<span class="comment">Stages new and modified, <b>without deleted</b></span>
+			<code>$ git add <mark>-u</mark> <span class="comment">or --update</span></code>
+			<span class="comment">Stages modified and deleted, <b>without new</b></span>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Adding Things to Staging Area <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git add <mark>*</mark></code>
+			<span class="comment">Add all unstaged files</span>
+			<code>$ git add <mark>*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files <strong>in current directory</strong></span>
+			<code>$ git add <mark>**/*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files <strong>in child directories</strong></span>
+			<code>$ git add <mark>./\*.<span class="comment">js</span></mark></code>
+			<span class="comment">Add all unstaged JS files</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Reseting Things <span class="pagination">(1/2)</span></h2>
+		<pre>
+			<code>$ git reset <mark class="comment">&lt; file_name &gt;</mark></code>
+			<span class="comment">Take files back from staging area to working area</span>
+			<br><br>
+			<img src="images/reset.svg" alt="reset">
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Reseting Things <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git reset <mark>--soft HEAD</mark></code>
+			<code>$ git reset <mark>--mixed HEAD</mark></code>
+			<code>$ git reset <mark>--hard HEAD</mark></code>
+			<div style="position: absolute; right: 0; bottom: 0;">
+				<img src="images/reset2.svg" alt="reset" height="450">
+			</div>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Discard Changes</h2>
+		<pre>
+			<code>$ git <mark>reset --hard HEAD</mark></code>
+			<br>
+		</pre>
+		<div style="text-align: center;">
+			<img src="images/github-discard.png" alt="">
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Git Ignore</h2>
+		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark> <span class="comment">(You have to <mark class="important">PUSH</mark> this!)</span></p>
+		<pre>
+			<code>file_name</code>
+			<code>*.js <span class="comment">or</span> ./\*.js</code>
+		</pre>
+		<hr>
+		<p>
+			For <mark>local ignoring</mark> add file names in <mark><strong>.git/info/exclude</strong></mark>
+			<br>
+			<strong>*</strong> if you have <mark class="important">already changed</mark> file, run the following code;
+		</p>
+		<pre class="important" style="width: 96%;">
+			<code>$ git update-index --assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
+		</pre>
+		<footer class="footer">
+			<pre>
+				<code>$ git update-index --no-assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
+				<span>Assume changes</span>
+				<code>$ git ls-files -v | grep '^[[:lower:]]'</code>
+				<span>Shows assume-unchanges list</span>
+			</pre>
+		</footer>
+	</section>
+	
+	<section class="slide">
+		<h2 class="shout grow">Golden Rule of Version Control</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout grow">Only Commit <span style="color: gold">RELATED</span> Changes!</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Committing</h2>
+		<pre>
+			<code>$ git commit <mark>-m "<span class="comment">Your commit subject</span>"</mark></code>
+			<code>$ git commit <mark>--amend -m "<span class="comment">Edited commit subject</span>"</mark></code>
+			<!-- <strong>How to merge commits?</strong>
+			<code>$ git reset --soft "HEAD~<span class="comment">n</span>"</code>
+			<span class="comment">Assuming ~n is number of commits to softly un-commit (i.e. ~1, ~2,...)</span>
+			<code>$ git commit --amend</code> -->
+		</pre>
+		<div style="text-align: right;">
+			<img src="images\in-case-of-fire.jpg" alt="In case of fire" height="300">
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Commit Subject <span class="pagination">(1/2)</span></h2>
+		<p>You can include keywords in your pull request titles and descriptions, as well as commit messages, to automatically close issues in GitHub.</p>
+		<p>The following keywords, followed by an issue number, will close the issue: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved.</p>
+		<p><strong>Example:</strong> fixed #54</p>
+		<pre class="important" style="width: 104%; margin-left: -2%;">
+			<code>$ git commit -m "[fixed #<mark class="comment">issue_id</mark>] <mark class="comment">Your commit message"</mark></code>
+		</pre>
+		<!-- <hr>
+		<pre>
+			<code>[#<mark class="comment">issue_id</mark> service:<mark class="comment">service_name</mark>] <mark class="comment">Your commit message</mark></code>
+		</pre>
+		<pre style="border: 1px dashed #f04f33; width: 110%; margin-left: -5%; padding: 15px;">
+			<code>git commit -m "<mark>[#123 service:jira] Fixed slider component</mark>"</code>
+		</pre> -->
+	</section>
+
+	<section class="slide">
+		<h2>Commit Subject <span class="pagination">(2/2)</span></h2>
+		<a href="https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53">GitHub - Commit message guidelines</a>
+		<br>
+		<a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>
+	</section>
+	
+	<section class="slide">
+		<h2>Push Changes</h2>
+		<pre>
+			<code>$ git push <mark>-u <span class="comment">(or --set-upstream) origin master</span></mark></code>
+			<span class="comment">Track remote branches by local branches</span>
+			<code>$ git <mark>remote show origin</mark></code>
+			<span class="comment">Shows all branches (local & remote) tracking and status info</span>
+		</pre>
+		<p><mark class="important">Important!</mark> You always <mark><strong>PUSH</strong></mark> after <mark><strong>PULL</strong></mark></p>
+	</section>
+
+	<section class="slide">
+		<h2>Pull Changes</h2>
+		<pre>
+			<code>$ git pull <mark><span class="comment">origin master</span></mark></code>
+			<span class="comment">You have all changes on your working area</span>
+		</pre>
+		<h2>Fetch Changes</h2>
+		<pre>
+			<code>$git fetch <mark><span class="comment">origin master</span></mark></code>
+			<span class="comment">Your working area does not change. You only can see your teammates changes with FETCH command.</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merging Types</h2>
+		<ul>
+			<li>Fast-Forward <!--: Basit bazı durumlarda branch'lerden bir tanesinde herhangi bir değişiklik yapılmamıştır ve bu branch'in yukarıdaki bölümde belirttiğimiz ortak commit'i ve son commit'i aynıdır. Bu durumda merge işlemi çok basitleşir ve git diğer branch'in tüm commit'lerini ortak commit'in üzerine ekleyerek merge işlemini yapar.--></li>
+			<li>Merge Commit <!--: Fakat çoğu zaman her iki branch'de birbirinden bağımsız olarak değişikliğe uğrar ve tarihçe açısından birbirinden uzaklaşırlar. Bu durumda merge işlemini yapmak için Git'in her iki branch arasındaki değişiklikleri içeren otomatik bir commit oluşturması gerekir. Oluşturulan bu commit'e Git terminolojisinde "Merge Commit" denir.--></li>
+			<li>Conflict</li>
+		</ul>
+		<div style="text-align: center;">
+			<img src="images/merge-conflict.png" alt="Merge conflict">
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Stash <span class="pagination">(1/2)</span></h2>
+		<pre>
+			<code>$ git stash <mark>save "<span class="comment">Your stash subject</span>"</mark></code>
+			<span class="comment">Puts all changed files into stash</span>
+			<code>$ git stash <mark>list</mark></code>
+			<span class="comment">Lists all stashes</span>
+			<code>$ git stash <mark>apply stash@{<span class="comment">n</span>}</mark></code>
+			<span class="comment">Applies chosen stash</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Stash <span class="pagination">(2/2)</span></h2>
+		<pre>
+			<code>$ git shash <mark>pop</mark></code>
+			<span class="comment">Applies first stash and deletes it</span>
+			<code>$ git stash <mark>drop stash@{<span class="comment">n</span>}</mark></code>
+			<span class="comment">Deletes chosen stash</span>
+			<code>$ git stash <mark>clear</mark></code>
+			<span class="comment">Deletes all saved stashes</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="images/git-basic-commands.png" alt="Git Basic Commands">
+			<figcaption>Copyright © 2017 <a href="http://medium.com/fedeveloper/git">fedeveloper</a></figcaption>
+		</figure>
+		<footer class="footer">
+			<p style="font-size: 3em;">Time Break!</p>
+		</footer>
+	</section>
+
+	<section class="slide">
+		<h2>Commit History (log) <span class="pagination">(1/3)</span></h2>
+		<pre>
+				<code>$ git log</code> <span class="comment"></span>
+				<code>$ git log <mark>-2</mark></code>
+				<code>$ git log <mark class="comment">&lt; file_name &gt;</mark></code>
+				<code>$ git log <mark class="comment">&lt; branch_name &gt;</mark></code>
+				<code>$ git log <mark>--pretty=oneline</mark><span class="comment"> | short | full</span></code>
+				<code>$ git log <mark>--pretty=format:"%cn"</mark><span class="comment"> | %s | %h</span></code>
+				<code>$ git log <mark>--pretty=format:"%h %s" --graph</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit History (log) <span class="pagination">(2/3)</span></h2>
+		<pre>
+				<code>$ git log <mark>--since="<span class="comment">2 weeks ago</span>"</mark></code>
+				<code>$ git log <mark>--until="<span class="comment">yesterday</span>"</mark></code>
+				<code>$ git log <mark>--author="<span class="comment">Nevcan</span>"</mark></code>
+				<code>$ git log <mark>--reflog</mark></code>
+				<span class="comment">Shows all history</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Commit History (log) <span class="pagination">(3/3)</span></h2>
+		<pre>
+			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Show</h2>
+		<pre>
+			<code>$ git show</code>
+			<span class="comment">Shows all changes in all files</span>
+			<code>$ git show <mark class="comment">&lt; file_name &gt;</mark></code>
+			<span class="comment">Shows all changes in specify file</span>
+			<code>$ git show <mark class="comment">&lt; branch_name &gt;</mark></code>
+			<span class="comment">Shows all changes in specify branch</span>
+			<p>Show cmd shows difference between local repo and remote repo</p>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Diff</h2>
+		<pre>
+				<code>$ git diff</code>
+				<span class="comment">Shows all changes in all files</span>
+				<code>$ git diff <mark class="comment">&lt; file_name &gt;</mark></code>
+				<span class="comment">Shows all changes in specify file</span>
+				<code>$ git diff <mark class="comment">&lt; branch_name &gt;</mark></code>
+				<span class="comment">Shows all changes in specify branch</span>
+				<p>Diff cmd shows difference between working area and local repo</p>
+			</pre>
+		
+	</section>
+	
+	<section class="slide" id="cover">
+		<h2>Git Branch</h2>
+		<p>Why you need branches?</p>
+		<figure>
+			<img class="cover" src="images/git-branch.jpg" alt="Git Branch">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Branch</h2>
+		<pre>
+			<code>$ git branch <mark class="comment">branch_name</mark></code>
+			<span class="comment">Creates a local branch</span>
+			<code>$ git checkout <mark class="comment">branch_name</mark></code>
+			<span class="comment">Goes that local branch</span>
+			<code>$ git branch <mark>--list</mark></code>
+			<span class="comment">Shows all local branches</span>
+			<code>$ git branch <mark>-a</mark> <span class="comment">or --all</span></code>
+			<span class="comment">Shows all local and remote branches</span>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Create a branch</li>
+				<li>Go that branch</li>
+				<li>git checkout -b create_and_go</li>
+				<li>git branch -d delete_branch</li>
+				<li>Rename ?</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">What is HEAD?</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Remote Branches</h2>
+		<p>Create Remote Branches</p>
+		<pre>
+			<code>$ git push &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code>
+			<code>git push &lt;REMOTENAME&gt; &lt;LOCALBRANCHNAME&gt;:&lt;REMOTEBRANCHNAME&gt;</code>
+		</pre>
+
+		<p>Deleting Remote Branches</p>
+		<pre>
+			<code>$ git push origin --delete <span class="comment">&lt; branch_name &gt;</span></code>
+			<code>$ git remote show origin</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Remote Branches</h2>
+		<p>Pulling Remote Branches <span class="pagination">(2/2)</span></p>
+		<pre>
+			<code>$ e <span class="comment">branch_name</span>></code>
+			<code>$ in</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Merging vs. Rebasing</h2>
+		<p>The golden rule of git rebase is to never use it on public branches.</p>
+		<div class="double">
+			<img src="images/merge.svg" alt="merge" style="float: left;">
+			<img src="images/03.svg" alt="rebase">
+		</div>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">REMOTE REPOSITORIES</h2>
+	</section>
+
+	<section class="slide" id="cover">
+		<h2>Git Objects</h2>
+		<p>SHA-1</p>
+		<figure>
+			<img class="cover" src="images/git-sha.jpg" alt="Git SHA">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
+	</section>
+	
+	<section class="slide">
+		<h2>Git Objects</h2>
+		<p>Git is a content-addressable filesystem. It means that at the core of Git is a simple key-value data store. You can insert any kind of content into it, and it will give you back a key that you can use to retrieve the content again at any time.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Tagging</h2>
+		<pre>
+			<code>$ git tag <mark class="comment">v1</mark></code>
+			<span class="comment">Creating a tag</span>
+			<code>$ git tag -a <mark class="comment">v1.2</mark> -m "<mark class="comment">my version 1.2git</mark>"</code>
+			<span class="comment">Creating an annotated tag</span>
+			<code>$ git tag <span class="comment">or w tag_name</code>
+			<span class="comment">Listing the available tags in Git is straightforward</span>
+			<code>$ git tag -l "<mark class="comment">v1*</mark>"</code>
+			<span class="comment">Lists the spesific named tags</span>
+		</pre>
+		<p></p>
+	</section>
+
+	<section class="slide">
+		<h2>Sharing Tags</h2>
+		<pre>
+			<code>$ git push origin <mark class="comment">v1</mark></code>
+		</pre>
+		<br>
+		<hr>
+		<br>
+		<h2>Checking Out Tags</h2>
+		<pre>
+			<code>$ git checkout <mark class="comment">v1</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide" id="cover">
+		<h2>Web Tools</h2>
+		<p>Remote Repositories & GUI Tools</p>
+		<figure>
+			<img class="cover" src="images/git-webtools.jpg" alt="Web Tools">
+			<figcaption class="white">
+				<a href="https://www.linkedin.com/in/nevcanuludas/" target="_blank">© Nevcan Uludaş</a>
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">GUI Tools</h2>
+	</section>
+
+	<section class="slide">
+		<table class="striped" style="margin-top: -40px;">
+			<tbody>
+				<tr>
+					<th scope="col">GUI Tools</th>
+					<th>Platform</th>
+					<th scope="col">Price</th>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a></td>
+					<td>Windows, Mac</td>
+					<td scope="col"><small>Free for 5 users</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a></td>
+					<td>Windows, Mac</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://tortoisegit.org/" target="_blank">TortoiseGit</a></td>
+					<td>Windows</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free for non-commercial use</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.syntevo.com/smartgit/" target="_blank">SmartGit</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>$79/user - Free for non-commercial use</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://wiki.gnome.org/Apps/Gitg/" target="_blank">gitg</a></td>
+					<td>Windows, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://git-cola.github.io/" target="_blank">git-cola</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.cycligent.com/git-tool" target="_blank">Cycligent Git Tool</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.collab.net/products/giteye" target="_blank">GitEye</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="http://gitahead.scitools.com/" target="_blank">GitAhead</a></td>
+					<td>Windows, Mac, Linux</td>
+					<td scope="col"><small>$29/user (Free 15 day trial)</small></td>
+				</tr>
+				<!-- <tr>
+					<td scope="col"><a href="https://wiki.gnome.org/Apps/giggle/" target="_blank">giggle</a></td>
+					<td>Linux</td>
+					<td scope="col"><small>Free</small></td>
+				</tr> -->
+			</tbody>
+		</table>
+	</section>
+
+	<!-- <section class="slide">
+		<h2>VS Code</h2>
+	</section> -->
+
+	<section class="slide grid">
+		<h2 class="shout grow">Remote Repositories</h2>
+	</section>
+
+	<section class="slide">
+		<table class="striped" style="margin-top: -40px;">
+			<tbody>
+				<tr>
+					<th scope="col">Remote Repos</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://github.com/" target="_blank">GitHub</a></td>
+					<td>$7 per month for Developers (for privet repos)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://bitbucket.org/product" target="_blank">Bitbucket</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://gitlab.com/" target="_blank">GitLab</a></td>
+					<td>Free</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://cloud.google.com/source-repositories/" target="_blank">Cloud Source by Google</a></td>
+					<td>$1 per project-user over 5 project-users per month</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://aws.amazon.com/codecommit/" target="_blank">AWS CodeCommit</a></td>
+					<td>Free for up to 5 users</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://www.gitkraken.com/" target="_blank">GitKraken</a></td>
+					<td>$49/yr per user (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://beanstalkapp.com/" target="_blank">Beanstalk</a></td>
+					<td>$15 per month (free for the first two weeks)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="http://www.fogcreek.com/fogbugz/devhub" target="_blank">FogBugz Kiln/DevHub</a></td>
+					<td>$50 per month (up to 5 users)</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://sourceforge.net/" target="_blank">SourceForge</a></td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td scope="col"><a href="https://allura.apache.org/" target="_blank">Apache Allura</a></td>
+					<td>-</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout grow">Git <span style="color: red">!=</span> GitHub</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Fork & Pull Request</h2>
+		<img src="images/github-fork.png" alt="GitHub Fork & Pull Request" style="width: 100%; top: 40px;">
+	</section>
+
+	<section class="slide">
+		<h2>README.md</h2>
+		<p><strong>.md</strong> is markdown. <strong>README.md</strong> is used to generate the html summary you see at the bottom of projects.</p>
+		<p><strong>Example:</strong><br><a href="https://github.com/nevcanuludas/git-presentation">https://github.com/nevcanuludas/git-presentation</a></p>
+	</section>
+
+	<section class="slide">
+		<h2>Nice to look up</h2>
+		<ul>
+			<li><a href="https://git-scm.com/docs">Git Reference</a> <span class="comment">(git-scm.com)</span></li>
+			<li><a href="https://aliozgur.gitbooks.io/git101/">Türkçe Git 101</a> <span class="comment">(gitbooks.io)</span></li>
+			<li><a href="https://app.pluralsight.com/library/courses/how-git-works/table-of-contents">How Git Works</a> <span class="comment">(pluralsight.com)</span></li>
+			<li><a href="https://www.atlassian.com/git/tutorials/advanced-overview">Advanced Git Tutorials</a> <span class="comment">(atlassian.com)</span></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout grow">Any Question?</h2>
+		<img src="images/reader_dark.png" alt="Git Master" style="position: absolute; width: 50%; top: 40px; margin-left: 15%; z-index: -1; border-radius: 100%">
+	</section>
+	
+	<section class="slide grid">
+		<h2>Nevcan Uludaş<br><span style="font-size: .6em">@nevcanuludas</span></h2>
+		<h2 class="shout grow">Thank You :)</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/nevcanuludas/git-presentation" target="_blank">Fork me on GitHub</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="script/main.min.js"></script>
+	<!-- Copyright © 2017 Nevcan Uludaş -->
+
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39574881-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments)};
+		gtag('js', new Date());
+
+		gtag('config', 'UA-39574881-3');
+	</script>
+
+</body>
+</html>
