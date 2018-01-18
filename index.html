@@ -43,7 +43,7 @@
 					<li><a href="index.html#22">Pull / Fetch</a></li>
 					<li><a href="index.html#24">Stash</a></li>
 					<li><a href="index.html#27">Commit History (Log)</a></li>
-					<li><a href="index.html#30">Show / Diff</a></li>
+					<li><a href="index.html#30">Diff / Show</a></li>
 				</ul>
 			</li>
 			<li><a href="index.html#33">BRANCHES</a>
@@ -384,6 +384,19 @@
 			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
 		</pre>
 	</section>
+	
+	<section class="slide">
+		<h2>Diff</h2>
+		<pre>
+			<code>$ git diff</code>
+			<span class="comment">Shows all changes in all files</span>
+			<code>$ git diff <mark class="comment">&lt; file_name &gt;</mark></code>
+			<span class="comment">Shows all changes in specify file</span>
+			<code>$ git diff <mark class="comment">&lt; branch_name &gt;</mark></code>
+			<span class="comment">Shows all changes in specify branch</span>
+			<p>Diff cmd shows difference between working area and local repo</p>
+		</pre>
+	</section>
 
 	<section class="slide">
 		<h2>Show</h2>
@@ -396,20 +409,6 @@
 			<span class="comment">Shows all changes in specify branch</span>
 			<p>Show cmd shows difference between local repo and remote repo</p>
 		</pre>
-	</section>
-	
-	<section class="slide">
-		<h2>Diff</h2>
-		<pre>
-				<code>$ git diff</code>
-				<span class="comment">Shows all changes in all files</span>
-				<code>$ git diff <mark class="comment">&lt; file_name &gt;</mark></code>
-				<span class="comment">Shows all changes in specify file</span>
-				<code>$ git diff <mark class="comment">&lt; branch_name &gt;</mark></code>
-				<span class="comment">Shows all changes in specify branch</span>
-				<p>Diff cmd shows difference between working area and local repo</p>
-			</pre>
-		
 	</section>
 	
 	<section class="slide" id="cover">
