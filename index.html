@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-	<title>Git Presentation 3 (Source Control Management)</title>
+	<title>Git Presentation (Source Control Management)</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,46 +30,54 @@
 	<section class="slide index">
 		<h2 style="margin-top: -40px;">Index</h2>
 		<ol class="triple pg-br-ins-unset">
-			<li><a href="index.html#3">QUICK START</a>
+			<li><a href="index.html#5">QUICK START</a>
 				<ul>
-					<li><a href="index.html#5">Installation</a></li>
-					<li><a href="index.html#6">Configuration</a></li>
-					<li><a href="index.html#9">Status</a></li>
-					<li><a href="index.html#10">Add / Reset</a></li>
-					<li><a href="index.html#14">Discard Changes</a></li>
-					<li><a href="index.html#15">Git Ignore</a></li>
-					<li><a href="index.html#18">Commit</a></li>
-					<li><a href="index.html#21">Push</a></li>
-					<li><a href="index.html#22">Pull / Fetch</a></li>
-					<li><a href="index.html#24">Stash</a></li>
-					<li><a href="index.html#27">Commit History (Log)</a></li>
-					<li><a href="index.html#30">Diff / Show</a></li>
+					<li><a href="index.html#7">Starting a Project</a></li>
+					<li><a href="index.html#8">Configuration</a></li>
+					<li><a href="index.html#11">Status</a></li>
+					<li><a href="index.html#12">Add Changes</a></li>
+					<li><a href="index.html#14">Reset / Discard</a></li>
+					<li><a href="index.html#17">Git Ignore</a></li>
+					<li><a href="index.html#21">Commit</a></li>
+					<li><a href="index.html#24">Remote Repos</a></li>
+					<li><a href="index.html#26">Push</a></li>
+					<li><a href="index.html#27">Pull / Fetch</a></li>
+					<li><a href="index.html#29">Stash</a></li>
+					<li><a href="index.html#32">Commit History (Log)</a></li>
+					<li><a href="index.html#35">Diff / Show</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#33">BRANCHES</a>
+			<li><a href="index.html#37">BRANCHES</a>
 				<ul>
-					<li><a href="index.html#34">HEAD</a></li>
-					<li><a href="index.html#36">Merge / Rebase</a></li>
+					<li><a href="index.html#40">Merge / Rebase</a></li>
+					<li><a href="index.html#41">Tagging</a></li>
+					<li><a href="index.html#43">HEAD</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#37">REMOTE REPOS</a></li>
-			<li><a href="index.html#39">GIT OBJECTS</a>
+			<li><a href="index.html#45">GIT OBJECTS</a>
 				<ul>
-					<li><a href="index.html#">SHA1</a></li>
-					<li><a href="index.html#40">Tagging</a></li>
+					<li><a href="index.html#46">SHA-1 and .git/</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#42">WEB TOOLS</a>
+			<li><a href="index.html#47">WEB TOOLS</a>
 				<ul>
-					<li><a href="index.html#44">GUI Tools</a></li>
-					<li><a href="index.html#46">Remote Repos</a></li>
-					<li><a href="index.html#48">Fork & Pull Request</a></li>
+					<li><a href="index.html#48">GUI Tools</a></li>
+					<li><a href="index.html#50">Remote Repos</a></li>
+					<li><a href="index.html#53">Fork & Pull Request</a></li>
 				</ul>
 			</li>
 			
 		</ol>
 	</section>
 	
+	<section class="slide grid">
+		<h2 class="shout grow">Who needs GIT?</h2>
+	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">Why GIT?</h2>
+	</section>
+
 	<section class="slide grid">
 		<h2 class="shout grow">Quick Start</h2>
 	</section>
@@ -81,14 +89,12 @@
 	</section>
 
 	<section class="slide">
-		<h2>Installation</h2>
+		<h2>Starting a Project</h2>
 		<pre>
-			<code>$ git clone <mark class="comment">&lt; remote &gt;</mark></code>
-			<code>$ git init <mark class="comment">&lt; directory &gt;</mark> <span class="comment">(This command generates hidden<br>.git folder. Git keeps all of its information in one place.)</span></code>
-			<code>$ git remote -v</code>
-			<code>$ git remote add <mark class="comment">&lt; name &gt; &lt; remote &gt;</mark></code>
-			<code>$ git remote remove <mark class="comment">&lt; name &gt;</mark></code>
-			<code>$ git remote rename <mark class="comment">&lt; old_name &gt; &lt; new_name &gt;</mark></code>
+			<code>$ git clone <mark class="comment">remote_url</mark></code>
+			<code>$ git init <span class="comment">(This command generates hidden .git folder.<br>Git keeps all of its information in one place)</span></code>
+			<code>$ git init <mark class="comment">directory_name</mark></code>
+			<code>Fork a Project</code>
 		</pre>
 		<footer class="footer">
 			<ol>
@@ -154,7 +160,7 @@
 	<section class="slide">
 		<h2>Adding Things to Staging Area <span class="pagination">(1/2)</span></h2>
 		<pre>
-			<code>$ git add <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git add <mark class="comment">file_name</mark></code>
 			<code>$ git add <mark>-A</mark> <span class="comment">or --all</span></code>
 			<span class="comment">Add changes from all tracked and untracked files</span>
 			<code>$ git add <mark>.</mark></code>
@@ -181,7 +187,7 @@
 	<section class="slide">
 		<h2>Resetting Things <span class="pagination">(1/2)</span></h2>
 		<pre>
-			<code>$ git reset <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git reset <mark class="comment">file_name</mark></code>
 			<span class="comment">Take files back from staging area to working area</span>
 			<br><br>
 			<img src="images/reset.svg" alt="reset">
@@ -212,21 +218,14 @@
 	</section>
 
 	<section class="slide">
-		<h2>Git Ignore</h2>
-		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark> <span class="comment">(You have to <mark class="important">PUSH</mark> this!)</span></p>
+		<h2>Git Ignore <span class="pagination">(1/2)</h2>
+		<p>For <mark>global ignoring</mark> add file names in <mark><strong>.gitignore</strong></mark></p>
 		<pre>
 			<code>file_name</code>
+			<code>/folder_name</code>
 			<code>*.js <span class="comment">or</span> ./\*.js</code>
 		</pre>
-		<hr>
-		<p>
-			For <mark>local ignoring</mark> add file names in <mark><strong>.git/info/exclude</strong></mark>
-			<br>
-			<strong>*</strong> if you have <mark class="important">already changed</mark> file, run the following code;
-		</p>
-		<pre class="important" style="width: 96%;">
-			<code>$ git update-index --assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
-		</pre>
+		<p><mark class="important">Important!</mark> You have to <mark><strong>PUSH</strong></mark> this <mark><strong>.gitignore</strong></mark> file!</p>
 		<footer class="footer">
 			<pre>
 				<code>$ git update-index --no-assume-unchanged <span class="comment">&lt; file_name &gt;</span></code>
@@ -235,6 +234,19 @@
 				<span>Shows assume-unchanges list</span>
 			</pre>
 		</footer>
+	</section>
+
+	<section class="slide">
+		<h2>Git Ignore <span class="pagination">(2/2)</h2>
+			<p>
+				For <mark>local ignoring</mark> add file names in <mark><strong>.git/info/exclude</strong></mark>
+				<br>
+				<strong>*</strong> if you have <mark class="important">already changed</mark> file, run the following code;
+			</p>
+			<pre class="important" style="width: 96%;">
+				<code>$ git update-index --assume-unchanged <mark class="comment">file_name</mark></code>
+				<code>$ git update-index --no-assume-unchanged <mark class="comment">file_name</mark></code>
+			</pre>
 	</section>
 	
 	<section class="slide">
@@ -283,6 +295,23 @@
 		<br>
 		<a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>
 	</section>
+
+	<section class="slide grid">
+		<h2 class="shout grow">REMOTE REPOSITORIES</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Setting a Remote Repo Up</h2>
+		<pre>
+			<code>$ git remote -v</code>
+			<code>$ git remote add <mark class="comment">remote_name</mark> <mark class="comment">remote_url</mark></code>
+			<code>$ git remote remove <mark class="comment">remote_name</mark></code>
+			<code>$ git remote rename <mark class="comment">old_name</mark> <mark class="comment">new_name</mark></code>
+		</pre>
+		<pre class="important" style="width: 96%;">
+			<mark class="comment">remote_name</mark> is usually preferred as " <mark><strong>origin</strong></mark> ".
+		</pre>
+	</section>
 	
 	<section class="slide">
 		<h2>Push Changes</h2>
@@ -292,7 +321,7 @@
 			<code>$ git <mark>remote show origin</mark></code>
 			<span class="comment">Shows all branches (local & remote) tracking and status info</span>
 		</pre>
-		<p><mark class="important">Important!</mark> You always <mark><strong>PUSH</strong></mark> after <mark><strong>PULL</strong></mark></p>
+		<p><mark class="important">Important!</mark> You always <mark><strong>PULL</strong></mark> before <mark><strong>PUSH</strong></mark></p>
 	</section>
 
 	<section class="slide">
@@ -303,18 +332,23 @@
 		</pre>
 		<h2>Fetch Changes</h2>
 		<pre>
-			<code>$git fetch <mark><span class="comment">origin master</span></mark></code>
+			<code>$ git fetch <mark><span class="comment">origin master</span></mark></code>
 			<span class="comment">Your working area does not change. You only can see your teammates changes with FETCH command.</span>
 		</pre>
 	</section>
 
 	<section class="slide">
 		<h2>Merging Types</h2>
-		<ul>
-			<li>Fast-Forward <!--: Basit bazı durumlarda branch'lerden bir tanesinde herhangi bir değişiklik yapılmamıştır ve bu branch'in yukarıdaki bölümde belirttiğimiz ortak commit'i ve son commit'i aynıdır. Bu durumda merge işlemi çok basitleşir ve git diğer branch'in tüm commit'lerini ortak commit'in üzerine ekleyerek merge işlemini yapar.--></li>
-			<li>Merge Commit <!--: Fakat çoğu zaman her iki branch'de birbirinden bağımsız olarak değişikliğe uğrar ve tarihçe açısından birbirinden uzaklaşırlar. Bu durumda merge işlemini yapmak için Git'in her iki branch arasındaki değişiklikleri içeren otomatik bir commit oluşturması gerekir. Oluşturulan bu commit'e Git terminolojisinde "Merge Commit" denir.--></li>
+		<pre>
+			<code>Fast-Forward</code>
+			<code>Merge Commit</code>
+			<code>Conflict</code>
+		</pre>
+		<!-- <ul>
+			<li>Fast-Forward: Basit bazı durumlarda branch'lerden bir tanesinde herhangi bir değişiklik yapılmamıştır ve bu branch'in yukarıdaki bölümde belirttiğimiz ortak commit'i ve son commit'i aynıdır. Bu durumda merge işlemi çok basitleşir ve git diğer branch'in tüm commit'lerini ortak commit'in üzerine ekleyerek merge işlemini yapar.</li>
+			<li>Merge Commit: Fakat çoğu zaman her iki branch'de birbirinden bağımsız olarak değişikliğe uğrar ve tarihçe açısından birbirinden uzaklaşırlar. Bu durumda merge işlemini yapmak için Git'in her iki branch arasındaki değişiklikleri içeren otomatik bir commit oluşturması gerekir. Oluşturulan bu commit'e Git terminolojisinde "Merge Commit" denir.</li>
 			<li>Conflict</li>
-		</ul>
+		</ul> -->
 		<div style="text-align: center;">
 			<img src="images/merge-conflict.png" alt="Merge conflict">
 		</div>
@@ -359,8 +393,8 @@
 		<pre>
 				<code>$ git log</code> <span class="comment"></span>
 				<code>$ git log <mark>-2</mark></code>
-				<code>$ git log <mark class="comment">&lt; file_name &gt;</mark></code>
-				<code>$ git log <mark class="comment">&lt; branch_name &gt;</mark></code>
+				<code>$ git log <mark class="comment">file_name</mark></code>
+				<code>$ git log <mark class="comment">branch_name</mark></code>
 				<code>$ git log <mark>--pretty=oneline</mark><span class="comment"> | short | full</span></code>
 				<code>$ git log <mark>--pretty=format:"%cn"</mark><span class="comment"> | %s | %h</span></code>
 				<code>$ git log <mark>--pretty=format:"%h %s" --graph</mark></code>
@@ -383,31 +417,32 @@
 		<pre>
 			<code>$ git <mark>config --global alias.lg</mark> <br>"log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s <br>%Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph"</code>
 		</pre>
+		BURAYA PROJEDEN BİR EKRAN GÖRÜNTÜSÜ KOY
 	</section>
 	
 	<section class="slide">
 		<h2>Diff</h2>
+		<p>Diff cmd shows difference between working area and local repo</p>
 		<pre>
 			<code>$ git diff</code>
 			<span class="comment">Shows all changes in all files</span>
-			<code>$ git diff <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git diff <mark class="comment">file_name</mark></code>
 			<span class="comment">Shows all changes in specify file</span>
-			<code>$ git diff <mark class="comment">&lt; branch_name &gt;</mark></code>
+			<code>$ git diff <mark class="comment">branch_name</mark></code>
 			<span class="comment">Shows all changes in specify branch</span>
-			<p>Diff cmd shows difference between working area and local repo</p>
 		</pre>
 	</section>
 
 	<section class="slide">
 		<h2>Show</h2>
+		<p>Show cmd shows difference between local repo and remote repo</p>
 		<pre>
 			<code>$ git show</code>
 			<span class="comment">Shows all changes in all files</span>
-			<code>$ git show <mark class="comment">&lt; file_name &gt;</mark></code>
+			<code>$ git show <mark class="comment">file_name</mark></code>
 			<span class="comment">Shows all changes in specify file</span>
-			<code>$ git show <mark class="comment">&lt; branch_name &gt;</mark></code>
+			<code>$ git show <mark class="comment">branch_name</mark></code>
 			<span class="comment">Shows all changes in specify branch</span>
-			<p>Show cmd shows difference between local repo and remote repo</p>
 		</pre>
 	</section>
 	
@@ -445,21 +480,17 @@
 		</footer>
 	</section>
 
-	<section class="slide grid">
-		<h2 class="shout grow">What is HEAD?</h2>
-	</section>
-
 	<section class="slide">
 		<h2>Remote Branches</h2>
-		<p>Create Remote Branches</p>
+		<strong>Creating Remote Branches</strong>
 		<pre>
-			<code>$ git push &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code>
-			<code>git push &lt;REMOTENAME&gt; &lt;LOCALBRANCHNAME&gt;:&lt;REMOTEBRANCHNAME&gt;</code>
+			<code>$ git push <mark class="comment">remote_name</mark> <mark class="comment">branch_name</mark></code>
+			<code>$ git push <mark class="comment">origin</mark> <mark class="comment">local_branch_name</mark>:<mark class="comment">remote_branch_name</mark></code>
 		</pre>
-
-		<p>Deleting Remote Branches</p>
+		<hr>
+		<strong>Deleting Remote Branches</strong>
 		<pre>
-			<code>$ git push origin --delete <span class="comment">&lt; branch_name &gt;</span></code>
+			<code>$ git push origin --delete <mark class="comment">branch_name</mark></code>
 			<code>$ git remote show origin</code>
 		</pre>
 	</section>
@@ -473,8 +504,40 @@
 		</div>
 	</section>
 
+	<section class="slide">
+		<h2>Tagging</h2>
+		<pre>
+			<code>$ git tag <mark class="comment">tag_name</mark></code>
+			<span class="comment">Creating a tag</span>
+			<code>$ git tag -a <mark class="comment">v1.2</mark> -m "<mark class="comment">in v1.2 we add super cool features</mark>"</code>
+			<span class="comment">Creating an annotated tag</span>
+			<code>$ git tag <span class="comment">or -l "<mark class="comment">v1</mark>*"</span></code>
+			<span class="comment">Lists all tags or the spesific named tags</span>
+			<code>$ git show <mark class="comment">tag_name</mark></code>
+		</pre>
+		<p></p>
+	</section>
+
+	<section class="slide">
+		<h2>Sharing Tags</h2>
+		<pre>
+			<code>$ git push origin <mark class="comment">tag_name</mark></code>
+		</pre>
+		<br>
+		<hr>
+		<br>
+		<h2>Checking Out Tags</h2>
+		<pre>
+			<code>$ git checkout <mark class="comment">tag_name</mark></code>
+		</pre>
+	</section>
+
 	<section class="slide grid">
-		<h2 class="shout grow">REMOTE REPOSITORIES</h2>
+		<h2 class="shout grow">What is HEAD?</h2>
+	</section>
+
+	<section class="slide" style="padding: 0">
+		<iframe src="http://git-school.github.io/visualizing-git/" frameborder="0" width="100%" height="600px"></iframe>
 	</section>
 
 	<section class="slide" id="cover">
@@ -491,35 +554,12 @@
 	<section class="slide">
 		<h2>Git Objects</h2>
 		<p>Git is a content-addressable filesystem. It means that at the core of Git is a simple key-value data store. You can insert any kind of content into it, and it will give you back a key that you can use to retrieve the content again at any time.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Tagging</h2>
-		<pre>
-			<code>$ git tag <mark class="comment">v1</mark></code>
-			<span class="comment">Creating a tag</span>
-			<code>$ git tag -a <mark class="comment">v1.2</mark> -m "<mark class="comment">my version 1.2git</mark>"</code>
-			<span class="comment">Creating an annotated tag</span>
-			<code>$ git tag <span class="comment">or w tag_name</code>
-			<span class="comment">Listing the available tags in Git is straightforward</span>
-			<code>$ git tag -l "<mark class="comment">v1*</mark>"</code>
-			<span class="comment">Lists the spesific named tags</span>
-		</pre>
-		<p></p>
-	</section>
-
-	<section class="slide">
-		<h2>Sharing Tags</h2>
-		<pre>
-			<code>$ git push origin <mark class="comment">v1</mark></code>
-		</pre>
-		<br>
-		<hr>
-		<br>
-		<h2>Checking Out Tags</h2>
-		<pre>
-			<code>$ git checkout <mark class="comment">v1</mark></code>
-		</pre>
+		<ul>
+			<li>What is SHA-1, <a href="http://www.sha1-online.com/" target="blank">Try it out!</a></li>
+			<li>.git/HEAD</li>
+			<li>.git/objects</li>
+			<li>.git/refs</li>
+		</ul>
 	</section>
 
 	<section class="slide" id="cover">
@@ -693,8 +733,21 @@
 		<img src="images/reader_dark.png" alt="Git Master" style="position: absolute; width: 50%; top: 40px; margin-left: 15%; z-index: -1; border-radius: 100%">
 	</section>
 	
-	<section class="slide grid">
-		<h2>Nevcan Uludaş<br><span style="font-size: .6em">@nevcanuludas</span></h2>
+	<section class="slide">
+		<h2>
+			Don't forget to give star this repo!
+			<br>
+			<a htrf="http://nevcanuludas.github.io/git-presentation" target="_blank" style="font-size: .7em">http://nevcanuludas.github.io/git-presentation</a>
+		</h2>
+		<img src="./images/github-star-me.png" alt="Star me on GitHub!" style="max-width: 100%">
+	</section>
+
+	<section class="slide">
+		<h2>
+			Nevcan Uludaş
+			<br>
+			<a href="https://github.com/nevcanuludas" target="_blank" style="font-size: .9em">@nevcanuludas</a>
+		</h2>
 		<h2 class="shout grow">Thank You :)</h2>
 	</section>
 
