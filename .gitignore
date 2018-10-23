@@ -1,1 +1,9 @@
-images-assets
+# Folders
+/node_modules
+/dist
+/images-assets
+
+# Files
+LICENSE.md
+*.py
+./\*.py
