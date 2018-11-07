@@ -1,18 +1,9 @@
-# Folders
-/node_modules
-/dist
-/images-assets
-
-# Files
-LICENSE.md
-*.py
-./\*.py
-
-
-######## rule for .Net Developers
 #Ignore thumbnails created by Windows
 Thumbs.db
 #Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
 *.user
 *.aps
 *.pch
@@ -21,13 +12,20 @@ Thumbs.db
 *_p.c
 *.ncb
 *.suo
+*.tlb
+*.tlh
 *.bak
 *.cache
 *.ilk
 *.log
 [Bb]in
 [Dd]ebug*/
+*.lib
 *.sbr
 obj/
 [Rr]elease*/
 _ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+#Nuget packages folder
+packages/
