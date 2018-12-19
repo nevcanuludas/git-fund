@@ -1,11 +1,10 @@
 
+# GIT Fundamentals
+-------------------
 ![](https://img.shields.io/github/contributors/nevcanuludas/git-presentation.svg) 
 [![](https://img.shields.io/github/issues-pr-raw/nevcanuludas/git-presentation.svg)](https://github.com/nevcanuludas/git-presentation/pulls)
 
-
-# GIT Fundamentals
-
-One Paragraph of project description goes here (Easy access GIT documentation)
+Easy access to GIT Fundamental commands 🤙🏻
 
 https://nevcanuludas.github.io/git-presentation/
 
