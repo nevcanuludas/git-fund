@@ -1,4 +1,7 @@
-# Project Title (Git Presentation)
+
+![](https://img.shields.io/github/contributors/nevcanuludas/git-presentation.svg)
+
+# GIT Fundamentals
 
 One Paragraph of project description goes here (Easy access GIT documentation)
 
