@@ -1,5 +1,7 @@
 
-![](https://img.shields.io/github/contributors/nevcanuludas/git-presentation.svg)
+![](https://img.shields.io/github/contributors/nevcanuludas/git-presentation.svg) 
+[![](https://img.shields.io/github/issues-pr-raw/nevcanuludas/git-presentation.svg)](https://github.com/nevcanuludas/git-presentation/pulls)
+
 
 # GIT Fundamentals
 
