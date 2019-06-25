@@ -39,31 +39,33 @@
 					<li><a href="index.html#16">Reset / Discard</a></li>
 					<li><a href="index.html#19">Git Ignore</a></li>
 					<li><a href="index.html#23">Commit</a></li>
-					<li><a href="index.html#26">Remote Repos</a></li>
-					<li><a href="index.html#28">Push</a></li>
-					<li><a href="index.html#29">Pull / Fetch</a></li>
-					<li><a href="index.html#31">Stash</a></li>
-					<li><a href="index.html#34">Commit History (Log)</a></li>
-					<li><a href="index.html#37">Diff / Show</a></li>
+					<li><a href="index.html#24">Commit Subject</a></li>
+					<li><a href="index.html#26">Squash Commits</a></li>
+					<li><a href="index.html#27">Remote Repos</a></li>
+					<li><a href="index.html#29">Push</a></li>
+					<li><a href="index.html#30">Pull / Fetch</a></li>
+					<li><a href="index.html#32">Stash</a></li>
+					<li><a href="index.html#35">Commit History (Log)</a></li>
+					<li><a href="index.html#38">Diff / Show</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#39">BRANCHES</a>
+			<li><a href="index.html#40">BRANCHES</a>
 				<ul>
-					<li><a href="index.html#42">Merge / Rebase</a></li>
-					<li><a href="index.html#43">Tagging</a></li>
-					<li><a href="index.html#45">HEAD</a></li>
+					<li><a href="index.html#43">Merge / Rebase</a></li>
+					<li><a href="index.html#44">Tagging</a></li>
+					<li><a href="index.html#46">HEAD</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#47">GIT OBJECTS</a>
+			<li><a href="index.html#48">GIT OBJECTS</a>
 				<ul>
-					<li><a href="index.html#48">SHA-1 and .git/</a></li>
+					<li><a href="index.html#49">SHA-1 and .git/</a></li>
 				</ul>
 			</li>
-			<li><a href="index.html#49">WEB TOOLS</a>
+			<li><a href="index.html#50">WEB TOOLS</a>
 				<ul>
-					<li><a href="index.html#50">GUI Tools</a></li>
-					<li><a href="index.html#52">Remote Repos</a></li>
-					<li><a href="index.html#55">Fork & Pull Request</a></li>
+					<li><a href="index.html#51">GUI Tools</a></li>
+					<li><a href="index.html#53">Remote Repos</a></li>
+					<li><a href="index.html#56">Fork & Pull Request</a></li>
 				</ul>
 			</li>
 			
@@ -326,6 +328,17 @@
 			}
 		</style>
 		<iframe src="https://whatthecommit.com/" frameborder="0" class="commit"></iframe>
+	</section>
+
+	<section class="slide">
+		<h2>Squash Commits</h2>
+		<pre>
+			<code>$ git rebase -i <mark>origin/master~3 master</mark></code>
+			<code>$ git push --force <mark>origin master</mark></code>
+		</pre>
+		<div style="text-align: center;">
+			<img src="images/squash-commit.png" alt="Squash Commit" width="60%">
+		</div>
 	</section>
 
 	<section class="slide grid">
