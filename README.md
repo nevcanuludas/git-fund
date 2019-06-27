@@ -5,7 +5,7 @@
 
 Easy access to GIT Fundamental commands 🤙🏻
 
-https://nevcanuludas.github.io/git-presentation/
+https://nevcanuludas.github.io/git-fund
 
 ## Getting Started
 
